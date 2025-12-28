@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service – PrivacyQR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --trust-navy: #0F172A;
+            --trust-navy-light: #1E293B;
+            --secure-mint: #10B981;
+            --secure-mint-glow: rgba(16, 185, 129, 0.15);
+            --alert-coral: #F43F5E;
+            --text-primary: #F1F5F9;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --surface: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(16, 185, 129, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--trust-navy);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16, 185, 129, 0.08), transparent),
+                radial-gradient(ellipse 60% 40% at 100% 100%, rgba(16, 185, 129, 0.05), transparent);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+            opacity: 0;
+            animation: slideUp 0.6s ease 0.2s forwards;
+        }
+
+        /* Language Selector Dropdown */
+        .lang-selector {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 100;
+            opacity: 0;
+            animation: fadeIn 0.6s ease 0.1s forwards;
+        }
+
+        .lang-dropdown {
+            position: relative;
+            width: 200px;
+        }
+
+        .lang-dropdown-trigger {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-secondary);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-dropdown-trigger:hover {
+            border-color: var(--border-glow);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .lang-dropdown-trigger .chevron {
+            font-size: 0.7rem;
+            transition: transform 0.3s ease;
+            color: var(--secure-mint);
+        }
+
+        .lang-dropdown.active .lang-dropdown-trigger .chevron {
+            transform: rotate(180deg);
+        }
+
+        .lang-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 101;
+        }
+
+        .lang-dropdown.active .lang-dropdown-menu {
+            display: flex;
+        }
+
+        .lang-option {
+            padding: 0.75rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .lang-option:hover {
+            background: var(--secure-mint-glow);
+            color: var(--secure-mint);
+        }
+
+        .lang-option.active {
+            background: var(--secure-mint);
+            color: var(--trust-navy);
+            font-weight: 600;
+        }
+
+        /* Custom Scrollbar for dropdown */
+        .lang-dropdown-menu::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .lang-dropdown-menu::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .lang-dropdown-menu::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--text-primary), var(--secure-mint));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.02em;
+        }
+
+        h2 {
+            color: var(--secure-mint);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 1.8rem;
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--border-glow);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2::before {
+            content: '→';
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 0.8rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .highlight-box {
+            background: var(--secure-mint-glow);
+            border-left: 3px solid var(--secure-mint);
+            padding: 1rem 1.2rem;
+            margin: 1.2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--secure-mint);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        ul {
+            margin-left: 1.2rem;
+            margin-bottom: 1rem;
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        li::before {
+            content: '•';
+            color: var(--secure-mint);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .summary-table {
+            width: 100%;
+            margin: 1.2rem 0;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .summary-table th,
+        .summary-table td {
+            padding: 0.7rem 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .summary-table th {
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-no {
+            color: var(--alert-coral);
+            font-weight: 500;
+        }
+
+        .status-yes {
+            color: var(--secure-mint);
+            font-weight: 500;
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--secure-mint);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+        }
+
+        a {
+            color: var(--secure-mint);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-pattern"></div>
+    <div class="container">
+        <div class="card">
+            <div class="lang-selector">
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-dropdown-trigger" onclick="toggleLangMenu()">
+                        <span id="currentLangDisplay">🇸🇪 Svenska</span>
+                        <span class="chevron">▾</span>
+                    </button>
+                    <div class="lang-dropdown-menu" id="langMenu">
+                        <div class="lang-option active" onclick="setLanguage('sv')">🇸🇪 Svenska</div>
+                        <div class="lang-option" onclick="setLanguage('en')">🇬🇧 English</div>
+                        <div class="lang-option" onclick="setLanguage('de')">🇩🇪 Deutsch</div>
+                        <div class="lang-option" onclick="setLanguage('fr')">🇫🇷 Français</div>
+                        <div class="lang-option" onclick="setLanguage('da')">🇩🇰 Dansk</div>
+                        <div class="lang-option" onclick="setLanguage('nb')">🇳🇴 Norsk</div>
+                        <div class="lang-option" onclick="setLanguage('es')">🇪🇸 Español</div>
+                        <div class="lang-option" onclick="setLanguage('it')">🇮🇹 Italiano</div>
+                        <div class="lang-option" onclick="setLanguage('nl')">🇳🇱 Nederlands</div>
+                        <div class="lang-option" onclick="setLanguage('pl')">🇵🇱 Polski</div>
+                        <div class="lang-option" onclick="setLanguage('pt')">🇵🇹 Português</div>
+                        <div class="lang-option" onclick="setLanguage('el')">🇬🇷 Ελληνικά</div>
+                        <div class="lang-option" onclick="setLanguage('fi')">🇫🇮 Suomi</div>
+                        <div class="lang-option" onclick="setLanguage('cs')">🇨🇿 Čeština</div>
+                        <div class="lang-option" onclick="setLanguage('ro')">🇷🇴 Română</div>
+                        <div class="lang-option" onclick="setLanguage('hu')">🇭🇺 Magyar</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🇸🇪 Svenska -->
+            <div id="content-sv" class="lang-content active">
+                <h1>📜 Användarvillkor</h1>
+                <p class="subtitle">Ikraftträdandedatum: 2025-01-01</p>
+                <p>Dessa användarvillkor reglerar din användning av PrivacyQR. Genom att använda appen godkänner du
+                    villkoren.</p>
+                <h2>Standard‑EULA</h2>
+                <p>Om du laddar ner appen via Apple App Store gäller Apples standard‑EULA. Dessa villkor är ett tillägg
+                    och ska läsas tillsammans med standard‑EULA.</p>
+                <h2>Användning</h2>
+                <ul>
+                    <li>Appen är avsedd för personlig och legitim användning.</li>
+                    <li>Du ansvarar för innehållet du skapar och delar.</li>
+                    <li>Du får inte använda appen för olagliga, vilseledande eller skadliga syften.</li>
+                </ul>
+                <h2>Ansvarsbegränsning</h2>
+                <p>Appen tillhandahålls i befintligt skick utan garantier. Vi ansvarar inte för skador som kan uppstå
+                    genom användning av appen.</p>
+                <h2>Immateriella rättigheter</h2>
+                <p>Allt innehåll i appen (förutom användargenererat innehåll) tillhör oss eller våra licensgivare.</p>
+                <h2>Kontakt</h2>
+                <ul>
+                    <li>Kontakt: privacyqr@proton.me</li>
+                </ul>
+                <h2>Ändringar</h2>
+                <p>Vi kan uppdatera villkoren. Den senaste versionen finns i appen.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Support</a> | <a
+                            href="privacy-policy.html">Integritetspolicy</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+            <!-- 🇬🇧 English -->
+            <div id="content-en" class="lang-content ">
+                <h1>📜 Terms of Use</h1>
+                <p class="subtitle">Effective Date: 2025-01-01</p>
+                <p>These terms of use govern your use of PrivacyQR. By using the app, you agree to the terms.</p>
+                <h2>Standard EULA</h2>
+                <p>If you download the app via Apple App Store, Apple's standard EULA applies. These terms are a
+                    supplement and should be read together with the standard EULA.</p>
+                <h2>Use</h2>
+                <ul>
+                    <li>The app is intended for personal and legitimate use.</li>
+                    <li>You are responsible for the content you create and share.</li>
+                    <li>You may not use the app for illegal, deceptive, or harmful purposes.</li>
+                </ul>
+                <h2>Limitation of Liability</h2>
+                <p>The app is provided as is without warranties. We are not responsible for damages that may arise
+                    through the use of the app.</p>
+                <h2>Intellectual Property</h2>
+                <p>All content in the app (except user-generated content) belongs to us or our licensors.</p>
+                <h2>Contact</h2>
+                <ul>
+                    <li>Contact: privacyqr@proton.me</li>
+                </ul>
+                <h2>Changes</h2>
+                <p>We may update the terms. The latest version is in the app.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Support</a> | <a href="privacy-policy.html">Privacy
+                            Policy</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+            <!-- 🇩🇪 Deutsch -->
+            <div id="content-de" class="lang-content ">
+                <h1>📜 Nutzungsbedingungen</h1>
+                <h2>Inkrafttretungsdatum: 2025-01-01</h2>
+                <p>Diese Nutzungsbedingungen regeln Ihre Nutzung von PrivacyQR. Durch die Nutzung der App erklären Sie
+                    sich mit den Bedingungen einverstanden.</p>
+                <h2>Standard-EULA</h2>
+                <p>Wenn Sie die App über den Apple App Store herunterladen, gilt die Standard-EULA von Apple. Diese
+                    Bedingungen sind eine Ergänzung und sollten zusammen mit der Standard-EULA gelesen werden.</p>
+                <h2>Nutzung</h2>
+                <ul>
+                    <li>Die App ist für die persönliche und rechtmäßige Nutzung bestimmt.</li>
+                    <li>Sie sind verantwortlich für die Inhalte, die Sie erstellen und teilen.</li>
+                    <li>Sie dürfen die App nicht für illegale, täuschende oder schädliche Zwecke verwenden.</li>
+                </ul>
+                <h2>Haftungsbeschränkung</h2>
+                <p>Die App wird ohne Mängelgewähr zur Verfügung gestellt. Wir haften nicht für Schäden, die durch die
+                    Nutzung der App entstehen können.</p>
+                <h2>Geistiges Eigentum</h2>
+                <p>Alle Inhalte in der App (außer nutzergenerierten Inhalten) gehören uns oder unseren Lizenzgebern.</p>
+                <h2>Kontakt</h2>
+                <ul>
+                    <li>Kontakt: privacyqr@proton.me</li>
+                </ul>
+                <h2>Änderungen</h2>
+                <p>Wir können die Bedingungen aktualisieren. Die neueste Version befindet sich in der App.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Support</a> | <a
+                            href="privacy-policy.html">Datenschutzerklärung</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+            <!-- 🇫🇷 Français -->
+            <div id="content-fr" class="lang-content ">
+                <h1>📜 Conditions d'utilisation</h1>
+                <p class="subtitle">Date d'entrée en vigueur : 2025-01-01</p>
+                <p>Ces conditions d'utilisation régissent votre utilisation de PrivacyQR. En utilisant l'application,
+                    vous acceptez les conditions.</p>
+                <h2>CLUF standard</h2>
+                <p>Si vous téléchargez l'application via l'Apple App Store, le CLUF standard d'Apple s'applique. Ces
+                    conditions sont un supplément et doivent être lues avec le CLUF standard.</p>
+                <h2>Utilisation</h2>
+                <ul>
+                    <li>L'application est destinée à un usage personnel et légitime.</li>
+                    <li>Vous êtes responsable du contenu que vous créez et partagez.</li>
+                    <li>Vous ne pouvez pas utiliser l'application à des fins illégales, trompeuses ou nuisibles.</li>
+                </ul>
+                <h2>Limitation de responsabilité</h2>
+                <p>L'application est fournie en l'état sans garantie. Nous ne sommes pas responsables des dommages
+                    pouvant survenir lors de l'utilisation de l'application.</p>
+                <h2>Propriété intellectuelle</h2>
+                <p>Tout le contenu de l'application (sauf le contenu généré par l'utilisateur) nous appartient ou
+                    appartient à nos concédants de licence.</p>
+                <h2>Contact</h2>
+                <ul>
+                    <li>Contact : privacyqr@proton.me</li>
+                </ul>
+                <h2>Modifications</h2>
+                <p>Nous pouvons mettre à jour les conditions. La dernière version se trouve dans l'application.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Support</a> | <a href="privacy-policy.html">Politique
+                            de confidentialité</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+            <!-- 🇩🇰 Dansk -->
+            <div id="content-da" class="lang-content ">
+                <h1>📜 Brugervilkår</h1>
+                <p class="subtitle">Ikrafttrædelsesdato: 2025-01-01</p>
+                <p>Disse brugervilkår regulerer din brug af PrivacyQR. Ved at bruge appen accepterer du vilkårene.</p>
+                <h2>Standard EULA</h2>
+                <p>Hvis du downloader appen via Apple App Store, gælder Apples standard EULA. Disse vilkår er et
+                    supplement og skal læses sammen med standard EULA.</p>
+                <h2>Brug</h2>
+                <ul>
+                    <li>Appen er beregnet til personlig og lovlig brug.</li>
+                    <li>Du er ansvarlig for det indhold, du opretter og deler.</li>
+                    <li>Du må ikke bruge appen til ulovlige, vildledende eller skadelige formål.</li>
+                </ul>
+                <h2>Ansvarsbegrænsning</h2>
+                <p>Appen leveres som den er uden garantier. Vi er ikke ansvarlige for skader, der måtte opstå ved brug
+                    af appen.</p>
+                <h2>Intellektuel ejendomsret</h2>
+                <p>Alt indhold i appen (undtagen brugergenereret indhold) tilhører os eller vores licensgivere.</p>
+                <h2>Kontakt</h2>
+                <ul>
+                    <li>Kontakt: privacyqr@proton.me</li>
+                </ul>
+                <h2>Ændringer</h2>
+                <p>Vi kan opdatere vilkårene. Den seneste version er i appen.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Support</a> | <a
+                            href="privacy-policy.html">Privatlivspolitik</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+            <!-- 🇳🇴 Norsk -->
+            <div id="content-nb" class="lang-content ">
+                <h1>📜 Brukervilkår</h1>
+                <p class="subtitle">Ikrafttredelsesdato: 2025-01-01</p>
+                <p>Disse brukervilkårene regulerer din bruk av PrivacyQR. Ved å bruke appen godtar du vilkårene.</p>
+                <h2>Standard EULA</h2>
+                <p>Hvis du laster ned appen via Apple App Store, gjelder Apples standard EULA. Disse vilkårene er et
+                    supplement og bør leses sammen med standard EULA.</p>
+                <h2>Bruk</h2>
+                <ul>
+                    <li>Appen er beregnet for personlig og lovlig bruk.</li>
+                    <li>Du er ansvarlig for innholdet du oppretter og deler.</li>
+                    <li>Du kan ikke bruke appen til ulovlige, villedende eller skadelige formål.</li>
+                </ul>
+                <h2>Ansvarsbegrensning</h2>
+                <p>Appen leveres som den er uten garantier. Vi er ikke ansvarlige for skader som kan oppstå ved bruk av
+                    appen.</p>
+                <h2>Immaterielle rettigheter</h2>
+                <p>Alt innhold i appen (unntatt brukergenerert innhold) tilhører oss eller våre lisensgivere.</p>
+                <h2>Kontakt</h2>
+                <ul>
+                    <li>Kontakt: privacyqr@proton.me</li>
+                </ul>
+                <h2>Endringer</h2>
+                <p>Vi kan oppdatere vilkårene. Den nyeste versjonen er i appen.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Support</a> | <a
+                            href="privacy-policy.html">Personvernerklæring</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+            <!-- 🇪🇸 Español -->
+            <div id="content-es" class="lang-content ">
+                <h1>📜 Términos de uso</h1>
+                <h2>Fecha de entrada en vigor: 2025-01-01</h2>
+                <p>Estos términos de uso rigen el uso de PrivacyQR. Al usar la aplicación, acepta los términos.</p>
+                <h2>EULA estándar</h2>
+                <p>Si descarga la aplicación a través de la App Store de Apple, se aplica la EULA estándar de Apple.
+                    Estos términos son un suplemento y deben leerse junto con la EULA estándar.</p>
+                <h2>Uso</h2>
+                <ul>
+                    <li>La aplicación está destinada a un uso personal y legítimo.</li>
+                    <li>Usted es responsable del contenido que crea y comparte.</li>
+                    <li>No puede utilizar la aplicación para fines ilegales, engañosos o dañinos.</li>
+                </ul>
+                <h2>Limitación de responsabilidad</h2>
+                <p>La aplicación se proporciona 'tal cual' sin garantías. No somos responsables de los daños que puedan
+                    surgir por el uso de la aplicación.</p>
+                <h2>Propiedad intelectual</h2>
+                <p>Todo el contenido de la aplicación (excepto el contenido generado por el usuario) nos pertenece a
+                    nosotros o a nuestros licenciantes.</p>
+                <h2>Contacto</h2>
+                <ul>
+                    <li>Contacto: privacyqr@proton.me</li>
+                </ul>
+                <h2>Cambios</h2>
+                <p>Podemos actualizar los términos. La última versión está en la aplicación.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Soporte</a> | <a href="privacy-policy.html">Política
+                            de privacidad</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+            <!-- 🇮🇹 Italiano -->
+            <div id="content-it" class="lang-content ">
+                <h1>📜 Termini di servizio</h1>
+                <h2>Data di entrata in vigore: 2025-01-01</h2>
+                <p>Questi termini di servizio regolano l'uso di PrivacyQR. Utilizzando l'app, accetti i termini.</p>
+                <h2>EULA standard</h2>
+                <p>Se scarichi l'app tramite l'Apple App Store, si applica l'EULA standard di Apple. Questi termini sono
+                    un supplemento e devono essere letti insieme all'EULA standard.</p>
+                <h2>Utilizzo</h2>
+                <ul>
+                    <li>L'app è destinata a un uso personale e legittimo.</li>
+                    <li>Sei responsabile dei contenuti che crei e condividi.</li>
+                    <li>Non puoi utilizzare l'app per scopi illegali, ingannevoli o dannosi.</li>
+                </ul>
+                <h2>Limitazione di responsabilità</h2>
+                <p>L'app viene fornita 'così com'è' senza garanzie. Non siamo responsabili per danni che potrebbero
+                    derivare dall'uso dell'app.</p>
+                <h2>Proprietà intellettuale</h2>
+                <p>Tutto il contenuto dell'app (eccetto i contenuti generati dall'utente) appartiene a noi o ai nostri
+                    licenzianti.</p>
+                <h2>Contatto</h2>
+                <ul>
+                    <li>Contatto: privacyqr@proton.me</li>
+                </ul>
+                <h2>Modifiche</h2>
+                <p>Potremmo aggiornare i termini. L'ultima versione è presente nell'app.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Supporto</a> | <a
+                            href="privacy-policy.html">Informativa sulla privacy</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+            <!-- 🇳🇱 Nederlands -->
+            <div id="content-nl" class="lang-content ">
+                <h1>📜 Gebruiksvoorwaarden</h1>
+                <h2>Ingangsdatum: 2025-01-01</h2>
+                <p>Deze gebruiksvoorwaarden zijn van toepassing op uw gebruik van PrivacyQR. Door de app te gebruiken,
+                    gaat u akkoord met de voorwaarden.</p>
+                <h2>Standaard EULA</h2>
+                <p>Als u de app downloadt via de Apple App Store, is de standaard EULA van Apple van toepassing. Deze
+                    voorwaarden zijn een aanvulling en moeten samen met de standaard EULA worden gelezen.</p>
+                <h2>Gebruik</h2>
+                <ul>
+                    <li>De app is bedoeld voor persoonlijk en legitiem gebruik.</li>
+                    <li>U bent verantwoordelijk voor de inhoud die u maakt en deelt.</li>
+                    <li>U mag de app niet gebruiken voor illegale, misleidende of schadelijke doeleinden.</li>
+                </ul>
+                <h2>Beperking van aansprakelijkheid</h2>
+                <p>De app wordt geleverd 'as is' zonder garanties. Wij zijn niet aansprakelijk voor schade die kan
+                    voortvloeien uit het gebruik van de app.</p>
+                <h2>Intellectueel eigendom</h2>
+                <p>Alle inhoud in de app (behalve door gebruikers gegenereerde inhoud) is ons eigendom of dat van onze
+                    licentiegevers.</p>
+                <h2>Contact</h2>
+                <ul>
+                    <li>Contact: privacyqr@proton.me</li>
+                </ul>
+                <h2>Wijzigingen</h2>
+                <p>We kunnen de voorwaarden bijwerken. De nieuwste versie staat in de app.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Support</a> | <a
+                            href="privacy-policy.html">Privacybeleid</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+            <!-- 🇵🇱 Polski -->
+            <div id="content-pl" class="lang-content ">
+                <h1>📜 Warunki użytkowania</h1>
+                <h2>Data wejścia w życie: 2025-01-01</h2>
+                <p>Niniejsze warunki użytkowania regulują korzystanie z aplikacji PrivacyQR. Korzystając z aplikacji,
+                    akceptujesz te warunki.</p>
+                <h2>Standardowa umowa EULA</h2>
+                <p>Jeśli pobierasz aplikację za pośrednictwem Apple App Store, obowiązuje standardowa umowa EULA firmy
+                    Apple. Niniejsze warunki stanowią uzupełnienie i należy je czytać łącznie ze standardową umową EULA.
+                </p>
+                <h2>Użytkowanie</h2>
+                <ul>
+                    <li>Aplikacja jest przeznaczona do użytku osobistego i zgodnego z prawem.</li>
+                    <li>Ponosisz odpowiedzialność za treści, które tworzysz i udostępniasz.</li>
+                    <li>Nie możesz używać aplikacji do celów niezgodnych z prawem, wprowadzających w błąd lub
+                        szkodliwych.</li>
+                </ul>
+                <h2>Ograniczenie odpowiedzialności</h2>
+                <p>Aplikacja jest dostarczana w stanie, w jakim się znajduje, bez żadnych gwarancji. Nie ponosimy
+                    odpowiedzialności za szkody, które mogą powstać w wyniku korzystania z aplikacji.</p>
+                <h2>Własność intelektualna</h2>
+                <p>Wszystkie treści w aplikacji (z wyjątkiem treści generowanych przez użytkowników) należą do nas lub
+                    naszych licencjodawców.</p>
+                <h2>Kontakt</h2>
+                <ul>
+                    <li>Kontakt: privacyqr@proton.me</li>
+                </ul>
+                <h2>Zmiany</h2>
+                <p>Możemy aktualizować warunki. Najnowsza wersja znajduje się w aplikacji.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Wsparcie</a> | <a href="privacy-policy.html">Polityka
+                            prywatności</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+            <!-- 🇵🇹 Português -->
+            <div id="content-pt" class="lang-content ">
+                <h1>📜 Termos de Uso</h1>
+                <h2>Data de vigência: 2025-01-01</h2>
+                <p>Estes termos de uso regem a sua utilização do PrivacyQR. Ao utilizar a aplicação, aceita estes
+                    termos.</p>
+                <h2>EULA padrão</h2>
+                <p>Se descarregar a aplicação através da Apple App Store, aplica-se a EULA padrão da Apple. Estes termos
+                    são um suplemento e devem ser lidos em conjunto com a EULA padrão.</p>
+                <h2>Utilização</h2>
+                <ul>
+                    <li>A aplicação destina-se a uma utilização pessoal e legítima.</li>
+                    <li>É responsável pelo conteúdo que cria e partilha.</li>
+                    <li>Não pode utilizar a aplicação para fins ilegais, enganosos ou prejudiciais.</li>
+                </ul>
+                <h2>Limitação de responsabilidade</h2>
+                <p>A aplicação é fornecida 'tal como está' sem garantias. Não somos responsáveis por danos que possam
+                    surgir da utilização da aplicação.</p>
+                <h2>Propriedade intelectual</h2>
+                <p>Todo o conteúdo da aplicação (exceto o conteúdo gerado pelo utilizador) pertence-nos ou aos nossos
+                    licenciadores.</p>
+                <h2>Contacto</h2>
+                <ul>
+                    <li>Contacto: privacyqr@proton.me</li>
+                </ul>
+                <h2>Alterações</h2>
+                <p>Podemos atualizar os termos. A versão mais recente encontra-se na aplicação.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Suporte</a> | <a href="privacy-policy.html">Política
+                            de Privacidade</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+            <!-- 🇬🇷 Ελληνικά -->
+            <div id="content-el" class="lang-content ">
+                <h1>📜 Όροι χρήσης</h1>
+                <h2>Ημερομηνία έναρξης ισχύος: 2025-01-01</h2>
+                <p>Αυτοί οι όροι χρήσης διέπουν τη χρήση του PrivacyQR. Χρησιμοποιώντας την εφαρμογή, αποδέχεστε τους
+                    όρους.</p>
+                <h2>Τυπική EULA</h2>
+                <p>Εάν κατεβάσετε την εφαρμογή μέσω του Apple App Store, ισχύει η τυπική EULA της Apple. Αυτοί οι όροι
+                    είναι συμπληρωματικοί και θα πρέπει να διαβάζονται μαζί με την τυπική EULA.</p>
+                <h2>Χρήση</h2>
+                <ul>
+                    <li>Η εφαρμογή προορίζεται για προσωπική και νόμιμη χρήση.</li>
+                    <li>Είστε υπεύθυνοι για το περιεχόμελο που δημιουργείτε και κοινοποιείτε.</li>
+                    <li>Δεν επιτρέπεται η χρήση της εφαρμογής για παράνομους, παραπλανητικούς ή επιβλαβείς σκοπούς.</li>
+                </ul>
+                <h2>Περιορισμός ευθύνης</h2>
+                <p>Η εφαρμογή παρέχεται «ως έχει» χωρίς εγγυήσεις. Δεν φέρουμε ευθύνη για ζημιές που μπορεί να προκύψουν
+                    από τη χρήση της εφαρμογής.</p>
+                <h2>Πνευματική ιδιοκτησία</h2>
+                <p>Όλο το περιεχόμενο της εφαρμογής (εκτός από το περιεχόμενο που δημιουργείται από τον χρήστη) ανήκει
+                    σε εμάς ή στους δικαιοπαρόχους μας.</p>
+                <h2>Επικοινωνία</h2>
+                <ul>
+                    <li>Επικοινωνία: privacyqr@proton.me</li>
+                </ul>
+                <h2>Αλλαγές</h2>
+                <p>Ενδέχεται να ενημερώσουμε τους όρους. Η τελευταία έκδοση βρίσκεται στην εφαρμογή.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Υποστήριξη</a> | <a
+                            href="privacy-policy.html">Πολιτική Απορρήτου</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+            <!-- 🇫🇮 Suomi -->
+            <div id="content-fi" class="lang-content ">
+                <h1>📜 Käyttöehdot</h1>
+                <h2>Voimaantulopäivä: 2025-01-01</h2>
+                <p>Nämä käyttöehdot säätelevät PrivacyQR-sovelluksen käyttöäsi. Käyttämällä sovellusta hyväksyt ehdot.
+                </p>
+                <h2>Vakio-EULA</h2>
+                <p>Jos lataat sovelluksen Apple App Storen kautta, sovelletaan Applen vakio-EULA-ehtoja. Nämä ehdot ovat
+                    täydennys ja ne tulee lukea yhdessä vakio-EULA-ehtojen kanssa.</p>
+                <h2>Käyttö</h2>
+                <ul>
+                    <li>Sovellus on tarkoitettu henkilökohtaiseen ja lainmukaiseen käyttöön.</li>
+                    <li>Olet vastuussa luomastasi ja jakamastasi sisällöstä.</li>
+                    <li>Et saa käyttää sovellusta laittomiin, harhaanjohtaviin tai vahingollisiin tarkoituksiin.</li>
+                </ul>
+                <h2>Vastuunrajoitus</h2>
+                <p>Sovellus toimitetaan sellaisenaan ilman takuita. Emme vastaa vahingoista, joita sovelluksen käytöstä
+                    voi aiheutua.</p>
+                <h2>Immateriaalioikeudet</h2>
+                <p>Kaikki sovelluksen sisältö (paitsi käyttäjän luoma sisältö) kuuluu meille tai lisenssinantajillemme.
+                </p>
+                <h2>Yhteystiedot</h2>
+                <ul>
+                    <li>Yhteystiedot: privacyqr@proton.me</li>
+                </ul>
+                <h2>Muutokset</h2>
+                <p>Saatamme päivittää ehtoja. Uusin versio on sovelluksessa.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Tuki</a> | <a
+                            href="privacy-policy.html">Tietosuojakäytäntö</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+            <!-- 🇨🇿 Čeština -->
+            <div id="content-cs" class="lang-content ">
+                <h1>📜 Podmínky použití</h1>
+                <h2>Datum účinnosti: 2025-01-01</h2>
+                <p>Tyto podmínky použití upravují vaše používání aplikace PrivacyQR. Používáním aplikace vyjadřujete
+                    souhlas s těmito podmínkami.</p>
+                <h2>Standardní EULA</h2>
+                <p>Pokud si aplikaci stáhnete přes Apple App Store, platí standardní EULA společnosti Apple. Tyto
+                    podmínky jsou doplňkem a měly by být čteny společně se standardní EULA.</p>
+                <h2>Použití</h2>
+                <ul>
+                    <li>Aplikace je určena pro osobní a legitimní použití.</li>
+                    <li>Nesete odpovědnost za obsah, který vytvoříte a sdílíte.</li>
+                    <li>Nesmíte aplikaci používat k nezákonným, klamavým nebo škodlivým účelům.</li>
+                </ul>
+                <h2>Omezení odpovědnosti</h2>
+                <p>Aplikace je poskytována „tak jak je“ bez záruk. Neneseme odpovědnost za škody, které mohou vzniknout
+                    používáním aplikace.</p>
+                <h2>Duševní vlastnictví</h2>
+                <p>Veškerý obsah v aplikaci (kromě uživatelského obsahu) patří nám nebo našim poskytovatelům licencí.
+                </p>
+                <h2>Kontakt</h2>
+                <ul>
+                    <li>Kontakt: privacyqr@proton.me</li>
+                </ul>
+                <h2>Změny</h2>
+                <p>Podmínky můžeme aktualizovat. Nejnovější verze je v aplikaci.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Podpora</a> | <a href="privacy-policy.html">Zásady
+                            ochrany osobních údajů</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+            <!-- 🇷🇴 Română -->
+            <div id="content-ro" class="lang-content ">
+                <h1>📜 Termeni de utilizare</h1>
+                <h2>Data intrării în vigoare: 2025-01-01</h2>
+                <p>Acești termeni de utilizare guvernează utilizarea PrivacyQR. Prin utilizarea aplicației, acceptați
+                    termenii.</p>
+                <h2>EULA standard</h2>
+                <p>Dacă descărcați aplicația prin Apple App Store, se aplică EULA standard a Apple. Acești termeni sunt
+                    un supliment și trebuie citiți împreună cu EULA standard.</p>
+                <h2>Utilizare</h2>
+                <ul>
+                    <li>Aplicația este destinată utilizării personale și legitime.</li>
+                    <li>Sunteți responsabil pentru conținutul pe care îl creați și îl partajați.</li>
+                    <li>Nu puteți utiliza aplicația în scopuri ilegale, înșelătoare sau dăunătoare.</li>
+                </ul>
+                <h2>Limitarea răspunderii</h2>
+                <p>Aplicația este furnizată „ca atare” fără garanții. Nu suntem responsabili pentru daunele care pot
+                    apărea prin utilizarea aplicației.</p>
+                <h2>Proprietate intelectuală</h2>
+                <p>Tot conținutul aplicației (cu excepția conținutului generat de utilizator) ne aparține nouă sau
+                    licențiatorilor noștri.</p>
+                <h2>Contact</h2>
+                <ul>
+                    <li>Contact: privacyqr@proton.me</li>
+                </ul>
+                <h2>Modificări</h2>
+                <p>Putem actualiza termenii. Ultima versiune se află în aplicație.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Suport</a> | <a href="privacy-policy.html">Politica
+                            de confidențialitate</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+            <!-- 🇭🇺 Magyar -->
+            <div id="content-hu" class="lang-content ">
+                <h1>📜 Felhasználási feltételek</h1>
+                <h2>Hatálybalépés dátuma: 2025-01-01</h2>
+                <p>Ezek a felhasználási feltételek szabályozzák a PrivacyQR használatát. Az alkalmazás használatával
+                    elfogadja a feltételeket.</p>
+                <h2>Standard EULA</h2>
+                <p>Ha az alkalmazást az Apple App Store-ból tölti le, az Apple standard EULA-ja érvényes. Ezek a
+                    feltételek kiegészítésként szolgálnak, és a standard EULA-val együtt értelmezendők.</p>
+                <h2>Használat</h2>
+                <ul>
+                    <li>Az alkalmazás személyes és jogszerű használatra készült.</li>
+                    <li>Ön felelős az Ön által létrehozott és megosztott tartalmakért.</li>
+                    <li>Nem használhatja az alkalmazást illegális, megtévesztő vagy káros célokra.</li>
+                </ul>
+                <h2>A felelősség korlátozása</h2>
+                <p>Az alkalmazást „jelen állapotában” adjuk közre, garanciák nélkül. Nem vállalunk felelősséget az
+                    alkalmazás használatából eredő károkért.</p>
+                <h2>Szellemi tulajdon</h2>
+                <p>Az alkalmazás minden tartalma (kivéve a felhasználói tartalmat) a mi tulajdonunkat vagy licencadóink
+                    tulajdonát képezi.</p>
+                <h2>Kapcsolat</h2>
+                <ul>
+                    <li>Kapcsolat: privacyqr@proton.me</li>
+                </ul>
+                <h2>Módosítások</h2>
+                <p>Frissíthetjük a feltételeket. A legutóbbi verzió az alkalmazásban érhető el.</p>
+                <footer>
+                    <div class="footer-links"><a href="index.html">Támogatás</a> | <a
+                            href="privacy-policy.html">Adatvédelmi irányelvek</a></div>
+                    <p>PrivacyQR – © 2025</p>
+                </footer>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleLangMenu() {
+            const dropdown = document.getElementById('langDropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        function setLanguage(lang) {
+            // Update Content
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.getElementById('content-' + lang).classList.add('active');
+
+            // Update Dropdown Text
+            const langNames = {
+                'sv': '🇸🇪 Svenska', 'en': '🇬🇧 English', 'de': '🇩🇪 Deutsch', 'fr': '🇫🇷 Français',
+                'da': '🇩🇰 Dansk', 'nb': '🇳🇴 Norsk', 'es': '🇪🇸 Español', 'it': '🇮🇹 Italiano',
+                'nl': '🇳🇱 Nederlands', 'pl': '🇵🇱 Polski', 'pt': '🇵🇹 Português', 'el': '🇬🇷 Ελληνικά',
+                'fi': '🇫🇮 Suomi', 'cs': '🇨🇿 Čeština', 'ro': '🇷🇴 Română', 'hu': '🇭🇺 Magyar'
+            };
+            document.getElementById('currentLangDisplay').innerText = langNames[lang];
+
+            // Close Menu
+            document.getElementById('langDropdown').classList.remove('active');
+
+            // Save preference (optional, not using storage for zero-cookie policy compliance strictly speaking, but handy)
+            // localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const dropdown = document.getElementById('langDropdown');
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        // Auto-detect language
+        document.addEventListener('DOMContentLoaded', () => {
+            const userLang = navigator.language.slice(0, 2);
+            const supportedLangs = ['sv', 'en', 'de', 'fr', 'da', 'nb', 'es', 'it', 'nl', 'pl', 'pt', 'el', 'fi', 'cs', 'ro', 'hu'];
+            if (supportedLangs.includes(userLang) && userLang !== 'sv') {
+                setLanguage(userLang);
+            }
+        });
+    </script>
+</body>
+
+</html>
