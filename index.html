@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
@@ -22,9 +22,39 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
             text-align: center;
+        }
+
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            gap: 0.4rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            border: 1px solid rgba(16, 185, 129, 0.5);
+            background: transparent;
+            color: #94A3B8;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+
+        .lang-btn:hover {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10B981;
+        }
+
+        .lang-btn.active {
+            background: #10B981;
+            color: #0F172A;
+            border-color: #10B981;
         }
 
         .logo {
@@ -126,63 +156,646 @@
             color: #64748B;
             font-size: 0.8rem;
         }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
+        <div class="language-selector">
+            <button class="lang-btn active" onclick="setLanguage('sv')">🇸🇪 Svenska</button>
+            <button class="lang-btn" onclick="setLanguage('en')">🇬🇧 English</button>
+            <button class="lang-btn" onclick="setLanguage('de')">🇩🇪 Deutsch</button>
+            <button class="lang-btn" onclick="setLanguage('fr')">🇫🇷 Français</button>
+            <button class="lang-btn" onclick="setLanguage('da')">🇩🇰 Dansk</button>
+            <button class="lang-btn" onclick="setLanguage('nb')">🇳🇴 Norsk</button>
+            <button class="lang-btn" onclick="setLanguage('es')">🇪🇸 Español</button>
+            <button class="lang-btn" onclick="setLanguage('it')">🇮🇹 Italiano</button>
+            <button class="lang-btn" onclick="setLanguage('nl')">🇳🇱 Nederlands</button>
+            <button class="lang-btn" onclick="setLanguage('pl')">🇵🇱 Polski</button>
+            <button class="lang-btn" onclick="setLanguage('pt')">🇵🇹 Português</button>
+            <button class="lang-btn" onclick="setLanguage('el')">🇬🇷 Ελληνικά</button>
+            <button class="lang-btn" onclick="setLanguage('fi')">🇫🇮 Suomi</button>
+            <button class="lang-btn" onclick="setLanguage('cs')">🇨🇿 Čeština</button>
+            <button class="lang-btn" onclick="setLanguage('ro')">🇷🇴 Română</button>
+            <button class="lang-btn" onclick="setLanguage('hu')">🇭🇺 Magyar</button>
+        </div>
+
         <div class="logo">🔒</div>
         <h1>PrivacyQR</h1>
-        <p class="tagline">Secure QR Codes – Your Data, Your Device, Your Control</p>
 
-        <div class="card">
-            <h2>📧 Contact Support</h2>
-            <p>Have a question or need help? We're here for you.</p>
-            <a href="mailto:privacyqr@proton.me" class="contact-btn">Email Support</a>
+        <!-- Swedish -->
+        <div id="content-sv" class="lang-content active">
+            <p class="tagline">Säkra QR-koder – Din data, din enhet, din kontroll</p>
+            <div class="card">
+                <h2>📧 Kontakta support</h2>
+                <p>Har du en fråga eller behöver hjälp? Vi finns här för dig.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">Skicka e-post</a>
+            </div>
+            <div class="card">
+                <h2>❓ Vanliga frågor</h2>
+                <div class="faq-item">
+                    <p class="faq-q">Lagras min data i molnet?</p>
+                    <p class="faq-a">Nej. PrivacyQR fungerar 100% offline. Alla dina QR-koder och inställningar lagras
+                        lokalt på din enhet. Vi laddar aldrig upp data till externa servrar.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Vad betyder "Burn After Read"?</p>
+                    <p class="faq-a">När det är aktiverat raderas en QR-kod automatiskt från ditt bibliotek efter att
+                        den visats en gång. Perfekt för att dela tillfällig information säkert.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Vad är Kill Switch?</p>
+                    <p class="faq-a">Kill Switch låter dig omedelbart avaktivera en sparad QR-kod så att den blir
+                        ogiltig om någon försöker använda den.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Hur återställer jag mitt Pro-köp?</p>
+                    <p class="faq-a">Gå till Inställningar → Återställ köp. Dina Pro-funktioner återställs med ditt
+                        Apple-ID.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Lagrar appen Face ID/Touch ID-data?</p>
+                    <p class="faq-a">Nej. Biometrisk autentisering hanteras helt av iOS. PrivacyQR kommer aldrig åt
+                        eller lagrar biometriska data.</p>
+                </div>
+            </div>
+            <div class="links"><a href="privacy-policy.html">Integritetspolicy</a></div>
         </div>
 
-        <div class="card">
-            <h2>❓ Frequently Asked Questions</h2>
-
-            <div class="faq-item">
-                <p class="faq-q">Is my data stored in the cloud?</p>
-                <p class="faq-a">No. PrivacyQR works 100% offline. All your QR codes and settings are stored locally on
-                    your device. We never upload any data to external servers.</p>
+        <!-- English -->
+        <div id="content-en" class="lang-content">
+            <p class="tagline">Secure QR Codes – Your Data, Your Device, Your Control</p>
+            <div class="card">
+                <h2>📧 Contact Support</h2>
+                <p>Have a question or need help? We're here for you.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">Email Support</a>
             </div>
-
-            <div class="faq-item">
-                <p class="faq-q">What does "Burn After Read" mean?</p>
-                <p class="faq-a">When enabled, a QR code will automatically be deleted from your library after it's been
-                    viewed once. Perfect for sharing temporary information securely.</p>
+            <div class="card">
+                <h2>❓ Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <p class="faq-q">Is my data stored in the cloud?</p>
+                    <p class="faq-a">No. PrivacyQR works 100% offline. All your QR codes and settings are stored locally
+                        on your device. We never upload any data to external servers.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">What does "Burn After Read" mean?</p>
+                    <p class="faq-a">When enabled, a QR code will automatically be deleted from your library after it's
+                        been viewed once. Perfect for sharing temporary information securely.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">What is the Kill Switch?</p>
+                    <p class="faq-a">The Kill Switch allows you to instantly deactivate a saved QR code, making it
+                        appear invalid if someone tries to use it.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">How do I restore my Pro purchase?</p>
+                    <p class="faq-a">Go to Settings → Restore Purchases. Your Pro features will be restored using your
+                        Apple ID.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Is Face ID/Touch ID data stored by the app?</p>
+                    <p class="faq-a">No. Biometric authentication is handled entirely by iOS. PrivacyQR never accesses
+                        or stores any biometric data.</p>
+                </div>
             </div>
-
-            <div class="faq-item">
-                <p class="faq-q">What is the Kill Switch?</p>
-                <p class="faq-a">The Kill Switch allows you to instantly deactivate a saved QR code, making it appear
-                    invalid if someone tries to use it.</p>
-            </div>
-
-            <div class="faq-item">
-                <p class="faq-q">How do I restore my Pro purchase?</p>
-                <p class="faq-a">Go to Settings → Restore Purchases. Your Pro features will be restored using your Apple
-                    ID.</p>
-            </div>
-
-            <div class="faq-item">
-                <p class="faq-q">Is Face ID/Touch ID data stored by the app?</p>
-                <p class="faq-a">No. Biometric authentication is handled entirely by iOS. PrivacyQR never accesses or
-                    stores any biometric data.</p>
-            </div>
+            <div class="links"><a href="privacy-policy.html">Privacy Policy</a></div>
         </div>
 
-        <div class="links">
-            <a href="privacy-policy.html">Privacy Policy</a>
+        <!-- German -->
+        <div id="content-de" class="lang-content">
+            <p class="tagline">Sichere QR-Codes – Deine Daten, Dein Gerät, Deine Kontrolle</p>
+            <div class="card">
+                <h2>📧 Support kontaktieren</h2>
+                <p>Hast du eine Frage oder brauchst Hilfe? Wir sind für dich da.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">E-Mail senden</a>
+            </div>
+            <div class="card">
+                <h2>❓ Häufig gestellte Fragen</h2>
+                <div class="faq-item">
+                    <p class="faq-q">Werden meine Daten in der Cloud gespeichert?</p>
+                    <p class="faq-a">Nein. PrivacyQR funktioniert 100% offline. Alle deine QR-Codes und Einstellungen
+                        werden lokal auf deinem Gerät gespeichert.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Was bedeutet "Burn After Read"?</p>
+                    <p class="faq-a">Wenn aktiviert, wird ein QR-Code automatisch aus deiner Bibliothek gelöscht,
+                        nachdem er einmal angezeigt wurde.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Was ist der Kill Switch?</p>
+                    <p class="faq-a">Mit dem Kill Switch kannst du einen gespeicherten QR-Code sofort deaktivieren.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Wie stelle ich meinen Pro-Kauf wieder her?</p>
+                    <p class="faq-a">Gehe zu Einstellungen → Käufe wiederherstellen.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Speichert die App Face ID/Touch ID-Daten?</p>
+                    <p class="faq-a">Nein. Die biometrische Authentifizierung wird vollständig von iOS verwaltet.</p>
+                </div>
+            </div>
+            <div class="links"><a href="privacy-policy.html">Datenschutzerklärung</a></div>
+        </div>
+
+        <!-- French -->
+        <div id="content-fr" class="lang-content">
+            <p class="tagline">Codes QR sécurisés – Vos données, votre appareil, votre contrôle</p>
+            <div class="card">
+                <h2>📧 Contacter le support</h2>
+                <p>Vous avez une question ou besoin d'aide ? Nous sommes là pour vous.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">Envoyer un e-mail</a>
+            </div>
+            <div class="card">
+                <h2>❓ Questions fréquentes</h2>
+                <div class="faq-item">
+                    <p class="faq-q">Mes données sont-elles stockées dans le cloud ?</p>
+                    <p class="faq-a">Non. PrivacyQR fonctionne 100% hors ligne. Tous vos codes QR et paramètres sont
+                        stockés localement.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Que signifie "Burn After Read" ?</p>
+                    <p class="faq-a">Une fois activé, un code QR sera automatiquement supprimé après avoir été affiché
+                        une fois.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Qu'est-ce que le Kill Switch ?</p>
+                    <p class="faq-a">Le Kill Switch vous permet de désactiver instantanément un code QR enregistré.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Comment restaurer mon achat Pro ?</p>
+                    <p class="faq-a">Allez dans Paramètres → Restaurer les achats.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">L'application stocke-t-elle les données Face ID/Touch ID ?</p>
+                    <p class="faq-a">Non. L'authentification biométrique est entièrement gérée par iOS.</p>
+                </div>
+            </div>
+            <div class="links"><a href="privacy-policy.html">Politique de confidentialité</a></div>
+        </div>
+
+        <!-- Danish -->
+        <div id="content-da" class="lang-content">
+            <p class="tagline">Sikre QR-koder – Dine data, din enhed, din kontrol</p>
+            <div class="card">
+                <h2>📧 Kontakt support</h2>
+                <p>Har du et spørgsmål eller brug for hjælp? Vi er her for dig.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">Send e-mail</a>
+            </div>
+            <div class="card">
+                <h2>❓ Ofte stillede spørgsmål</h2>
+                <div class="faq-item">
+                    <p class="faq-q">Gemmes mine data i skyen?</p>
+                    <p class="faq-a">Nej. PrivacyQR fungerer 100% offline. Alle dine QR-koder og indstillinger gemmes
+                        lokalt på din enhed.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Hvad betyder "Burn After Read"?</p>
+                    <p class="faq-a">Når det er aktiveret, slettes en QR-kode automatisk fra dit bibliotek, efter den er
+                        blevet vist én gang.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Hvad er Kill Switch?</p>
+                    <p class="faq-a">Kill Switch lader dig øjeblikkeligt deaktivere en gemt QR-kode.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Hvordan gendanner jeg mit Pro-køb?</p>
+                    <p class="faq-a">Gå til Indstillinger → Gendan køb.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Gemmer appen Face ID/Touch ID-data?</p>
+                    <p class="faq-a">Nej. Biometrisk godkendelse håndteres helt af iOS.</p>
+                </div>
+            </div>
+            <div class="links"><a href="privacy-policy.html">Privatlivspolitik</a></div>
+        </div>
+
+        <!-- Norwegian -->
+        <div id="content-nb" class="lang-content">
+            <p class="tagline">Sikre QR-koder – Dine data, din enhet, din kontroll</p>
+            <div class="card">
+                <h2>📧 Kontakt support</h2>
+                <p>Har du et spørsmål eller trenger hjelp? Vi er her for deg.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">Send e-post</a>
+            </div>
+            <div class="card">
+                <h2>❓ Ofte stilte spørsmål</h2>
+                <div class="faq-item">
+                    <p class="faq-q">Lagres dataene mine i skyen?</p>
+                    <p class="faq-a">Nei. PrivacyQR fungerer 100% offline. Alle QR-kodene og innstillingene dine lagres
+                        lokalt på enheten din.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Hva betyr "Burn After Read"?</p>
+                    <p class="faq-a">Når det er aktivert, slettes en QR-kode automatisk fra biblioteket ditt etter at
+                        den har blitt vist én gang.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Hva er Kill Switch?</p>
+                    <p class="faq-a">Kill Switch lar deg umiddelbart deaktivere en lagret QR-kode.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Hvordan gjenoppretter jeg Pro-kjøpet mitt?</p>
+                    <p class="faq-a">Gå til Innstillinger → Gjenopprett kjøp.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Lagrer appen Face ID/Touch ID-data?</p>
+                    <p class="faq-a">Nei. Biometrisk autentisering håndteres helt av iOS.</p>
+                </div>
+            </div>
+            <div class="links"><a href="privacy-policy.html">Personvernerklæring</a></div>
+        </div>
+
+        <!-- Spanish -->
+        <div id="content-es" class="lang-content">
+            <p class="tagline">Códigos QR seguros – Tus datos, tu dispositivo, tu control</p>
+            <div class="card">
+                <h2>📧 Contactar soporte</h2>
+                <p>¿Tienes una pregunta o necesitas ayuda? Estamos aquí para ti.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">Enviar email</a>
+            </div>
+            <div class="card">
+                <h2>❓ Preguntas frecuentes</h2>
+                <div class="faq-item">
+                    <p class="faq-q">¿Se almacenan mis datos en la nube?</p>
+                    <p class="faq-a">No. PrivacyQR funciona 100% sin conexión. Todos tus códigos QR y ajustes se
+                        almacenan localmente en tu dispositivo.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">¿Qué significa "Burn After Read"?</p>
+                    <p class="faq-a">Cuando está activado, un código QR se eliminará automáticamente de tu biblioteca
+                        después de mostrarse una vez.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">¿Qué es el Kill Switch?</p>
+                    <p class="faq-a">El Kill Switch te permite desactivar instantáneamente un código QR guardado.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">¿Cómo restauro mi compra Pro?</p>
+                    <p class="faq-a">Ve a Ajustes → Restaurar compras.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">¿La app almacena datos de Face ID/Touch ID?</p>
+                    <p class="faq-a">No. La autenticación biométrica es manejada completamente por iOS.</p>
+                </div>
+            </div>
+            <div class="links"><a href="privacy-policy.html">Política de privacidad</a></div>
+        </div>
+
+        <!-- Italian -->
+        <div id="content-it" class="lang-content">
+            <p class="tagline">Codici QR sicuri – I tuoi dati, il tuo dispositivo, il tuo controllo</p>
+            <div class="card">
+                <h2>📧 Contatta il supporto</h2>
+                <p>Hai una domanda o hai bisogno di aiuto? Siamo qui per te.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">Invia email</a>
+            </div>
+            <div class="card">
+                <h2>❓ Domande frequenti</h2>
+                <div class="faq-item">
+                    <p class="faq-q">I miei dati vengono archiviati nel cloud?</p>
+                    <p class="faq-a">No. PrivacyQR funziona al 100% offline. Tutti i tuoi codici QR e le impostazioni
+                        sono archiviati localmente sul tuo dispositivo.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Cosa significa "Burn After Read"?</p>
+                    <p class="faq-a">Quando attivato, un codice QR verrà eliminato automaticamente dalla tua libreria
+                        dopo essere stato visualizzato una volta.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Cos'è il Kill Switch?</p>
+                    <p class="faq-a">Il Kill Switch ti permette di disattivare istantaneamente un codice QR salvato.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Come ripristino il mio acquisto Pro?</p>
+                    <p class="faq-a">Vai su Impostazioni → Ripristina acquisti.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">L'app memorizza i dati di Face ID/Touch ID?</p>
+                    <p class="faq-a">No. L'autenticazione biometrica è gestita interamente da iOS.</p>
+                </div>
+            </div>
+            <div class="links"><a href="privacy-policy.html">Informativa sulla privacy</a></div>
+        </div>
+
+        <!-- Dutch -->
+        <div id="content-nl" class="lang-content">
+            <p class="tagline">Veilige QR-codes – Jouw data, jouw apparaat, jouw controle</p>
+            <div class="card">
+                <h2>📧 Contact support</h2>
+                <p>Heb je een vraag of hulp nodig? We zijn er voor je.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">E-mail sturen</a>
+            </div>
+            <div class="card">
+                <h2>❓ Veelgestelde vragen</h2>
+                <div class="faq-item">
+                    <p class="faq-q">Worden mijn gegevens in de cloud opgeslagen?</p>
+                    <p class="faq-a">Nee. PrivacyQR werkt 100% offline. Al je QR-codes en instellingen worden lokaal op
+                        je apparaat opgeslagen.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Wat betekent "Burn After Read"?</p>
+                    <p class="faq-a">Wanneer ingeschakeld, wordt een QR-code automatisch uit je bibliotheek verwijderd
+                        nadat deze één keer is bekeken.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Wat is de Kill Switch?</p>
+                    <p class="faq-a">Met de Kill Switch kun je een opgeslagen QR-code direct deactiveren.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Hoe herstel ik mijn Pro-aankoop?</p>
+                    <p class="faq-a">Ga naar Instellingen → Aankopen herstellen.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Slaat de app Face ID/Touch ID-gegevens op?</p>
+                    <p class="faq-a">Nee. Biometrische authenticatie wordt volledig door iOS afgehandeld.</p>
+                </div>
+            </div>
+            <div class="links"><a href="privacy-policy.html">Privacybeleid</a></div>
+        </div>
+
+        <!-- Polish -->
+        <div id="content-pl" class="lang-content">
+            <p class="tagline">Bezpieczne kody QR – Twoje dane, Twoje urządzenie, Twoja kontrola</p>
+            <div class="card">
+                <h2>📧 Skontaktuj się ze wsparciem</h2>
+                <p>Masz pytanie lub potrzebujesz pomocy? Jesteśmy tu dla Ciebie.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">Wyślij e-mail</a>
+            </div>
+            <div class="card">
+                <h2>❓ Często zadawane pytania</h2>
+                <div class="faq-item">
+                    <p class="faq-q">Czy moje dane są przechowywane w chmurze?</p>
+                    <p class="faq-a">Nie. PrivacyQR działa w 100% offline. Wszystkie Twoje kody QR i ustawienia są
+                        przechowywane lokalnie na Twoim urządzeniu.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Co oznacza "Burn After Read"?</p>
+                    <p class="faq-a">Po włączeniu kod QR zostanie automatycznie usunięty z biblioteki po jednokrotnym
+                        wyświetleniu.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Czym jest Kill Switch?</p>
+                    <p class="faq-a">Kill Switch pozwala natychmiast dezaktywować zapisany kod QR.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Jak przywrócić zakup Pro?</p>
+                    <p class="faq-a">Przejdź do Ustawienia → Przywróć zakupy.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Czy aplikacja przechowuje dane Face ID/Touch ID?</p>
+                    <p class="faq-a">Nie. Uwierzytelnianie biometryczne jest obsługiwane całkowicie przez iOS.</p>
+                </div>
+            </div>
+            <div class="links"><a href="privacy-policy.html">Polityka prywatności</a></div>
+        </div>
+
+        <!-- Portuguese -->
+        <div id="content-pt" class="lang-content">
+            <p class="tagline">Códigos QR seguros – Os seus dados, o seu dispositivo, o seu controlo</p>
+            <div class="card">
+                <h2>📧 Contactar suporte</h2>
+                <p>Tem uma pergunta ou precisa de ajuda? Estamos aqui para si.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">Enviar e-mail</a>
+            </div>
+            <div class="card">
+                <h2>❓ Perguntas frequentes</h2>
+                <div class="faq-item">
+                    <p class="faq-q">Os meus dados são armazenados na nuvem?</p>
+                    <p class="faq-a">Não. O PrivacyQR funciona 100% offline. Todos os seus códigos QR e definições são
+                        armazenados localmente no seu dispositivo.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">O que significa "Burn After Read"?</p>
+                    <p class="faq-a">Quando ativado, um código QR será automaticamente eliminado da sua biblioteca após
+                        ser visualizado uma vez.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">O que é o Kill Switch?</p>
+                    <p class="faq-a">O Kill Switch permite-lhe desativar instantaneamente um código QR guardado.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Como restauro a minha compra Pro?</p>
+                    <p class="faq-a">Vá a Definições → Restaurar compras.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">A app armazena dados de Face ID/Touch ID?</p>
+                    <p class="faq-a">Não. A autenticação biométrica é tratada inteiramente pelo iOS.</p>
+                </div>
+            </div>
+            <div class="links"><a href="privacy-policy.html">Política de Privacidade</a></div>
+        </div>
+
+        <!-- Greek -->
+        <div id="content-el" class="lang-content">
+            <p class="tagline">Ασφαλείς κωδικοί QR – Τα δεδομένα σας, η συσκευή σας, ο έλεγχός σας</p>
+            <div class="card">
+                <h2>📧 Επικοινωνία με υποστήριξη</h2>
+                <p>Έχετε ερώτηση ή χρειάζεστε βοήθεια; Είμαστε εδώ για εσάς.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">Αποστολή email</a>
+            </div>
+            <div class="card">
+                <h2>❓ Συχνές ερωτήσεις</h2>
+                <div class="faq-item">
+                    <p class="faq-q">Αποθηκεύονται τα δεδομένα μου στο cloud;</p>
+                    <p class="faq-a">Όχι. Το PrivacyQR λειτουργεί 100% offline. Όλοι οι κωδικοί QR και οι ρυθμίσεις σας
+                        αποθηκεύονται τοπικά στη συσκευή σας.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Τι σημαίνει "Burn After Read";</p>
+                    <p class="faq-a">Όταν είναι ενεργοποιημένο, ένας κωδικός QR θα διαγραφεί αυτόματα από τη βιβλιοθήκη
+                        σας μετά την προβολή του μία φορά.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Τι είναι το Kill Switch;</p>
+                    <p class="faq-a">Το Kill Switch σας επιτρέπει να απενεργοποιήσετε άμεσα έναν αποθηκευμένο κωδικό QR.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Πώς επαναφέρω την αγορά Pro;</p>
+                    <p class="faq-a">Μεταβείτε στις Ρυθμίσεις → Επαναφορά αγορών.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Αποθηκεύει η εφαρμογή δεδομένα Face ID/Touch ID;</p>
+                    <p class="faq-a">Όχι. Ο βιομετρικός έλεγχος ταυτότητας διαχειρίζεται εξ ολοκλήρου από το iOS.</p>
+                </div>
+            </div>
+            <div class="links"><a href="privacy-policy.html">Πολιτική Απορρήτου</a></div>
+        </div>
+
+        <!-- Finnish -->
+        <div id="content-fi" class="lang-content">
+            <p class="tagline">Turvalliset QR-koodit – Sinun datasi, sinun laitteesi, sinun hallintasi</p>
+            <div class="card">
+                <h2>📧 Ota yhteyttä tukeen</h2>
+                <p>Onko sinulla kysyttävää tai tarvitsetko apua? Olemme täällä sinua varten.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">Lähetä sähköposti</a>
+            </div>
+            <div class="card">
+                <h2>❓ Usein kysytyt kysymykset</h2>
+                <div class="faq-item">
+                    <p class="faq-q">Tallennetaanko tietoni pilveen?</p>
+                    <p class="faq-a">Ei. PrivacyQR toimii 100% offline-tilassa. Kaikki QR-koodisi ja asetuksesi
+                        tallennetaan paikallisesti laitteellesi.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Mitä "Burn After Read" tarkoittaa?</p>
+                    <p class="faq-a">Kun se on käytössä, QR-koodi poistetaan automaattisesti kirjastostasi sen jälkeen,
+                        kun se on katsottu kerran.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Mikä on Kill Switch?</p>
+                    <p class="faq-a">Kill Switch mahdollistaa tallennetun QR-koodin välittömän deaktivoinnin.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Miten palautan Pro-ostokseni?</p>
+                    <p class="faq-a">Siirry kohtaan Asetukset → Palauta ostokset.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Tallentaako sovellus Face ID/Touch ID -tietoja?</p>
+                    <p class="faq-a">Ei. Biometrinen todennus hoidetaan kokonaan iOS:n toimesta.</p>
+                </div>
+            </div>
+            <div class="links"><a href="privacy-policy.html">Tietosuojakäytäntö</a></div>
+        </div>
+
+        <!-- Czech -->
+        <div id="content-cs" class="lang-content">
+            <p class="tagline">Bezpečné QR kódy – Vaše data, vaše zařízení, vaše kontrola</p>
+            <div class="card">
+                <h2>📧 Kontaktujte podporu</h2>
+                <p>Máte otázku nebo potřebujete pomoc? Jsme tu pro vás.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">Odeslat e-mail</a>
+            </div>
+            <div class="card">
+                <h2>❓ Často kladené otázky</h2>
+                <div class="faq-item">
+                    <p class="faq-q">Jsou moje data uložena v cloudu?</p>
+                    <p class="faq-a">Ne. PrivacyQR funguje 100% offline. Všechny vaše QR kódy a nastavení jsou uloženy
+                        lokálně ve vašem zařízení.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Co znamená "Burn After Read"?</p>
+                    <p class="faq-a">Když je aktivováno, QR kód bude automaticky smazán z vaší knihovny po jednom
+                        zobrazení.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Co je Kill Switch?</p>
+                    <p class="faq-a">Kill Switch vám umožňuje okamžitě deaktivovat uložený QR kód.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Jak obnovím svůj nákup Pro?</p>
+                    <p class="faq-a">Přejděte do Nastavení → Obnovit nákupy.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Ukládá aplikace data Face ID/Touch ID?</p>
+                    <p class="faq-a">Ne. Biometrické ověřování je zcela zpracováváno systémem iOS.</p>
+                </div>
+            </div>
+            <div class="links"><a href="privacy-policy.html">Zásady ochrany osobních údajů</a></div>
+        </div>
+
+        <!-- Romanian -->
+        <div id="content-ro" class="lang-content">
+            <p class="tagline">Coduri QR sigure – Datele tale, dispozitivul tău, controlul tău</p>
+            <div class="card">
+                <h2>📧 Contactează suportul</h2>
+                <p>Ai o întrebare sau ai nevoie de ajutor? Suntem aici pentru tine.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">Trimite email</a>
+            </div>
+            <div class="card">
+                <h2>❓ Întrebări frecvente</h2>
+                <div class="faq-item">
+                    <p class="faq-q">Sunt datele mele stocate în cloud?</p>
+                    <p class="faq-a">Nu. PrivacyQR funcționează 100% offline. Toate codurile QR și setările tale sunt
+                        stocate local pe dispozitivul tău.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Ce înseamnă "Burn After Read"?</p>
+                    <p class="faq-a">Când este activat, un cod QR va fi șters automat din bibliotecă după ce a fost
+                        vizualizat o dată.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Ce este Kill Switch?</p>
+                    <p class="faq-a">Kill Switch îți permite să dezactivezi instant un cod QR salvat.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Cum îmi restaurez achiziția Pro?</p>
+                    <p class="faq-a">Mergi la Setări → Restaurează achizițiile.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Stochează aplicația date Face ID/Touch ID?</p>
+                    <p class="faq-a">Nu. Autentificarea biometrică este gestionată în întregime de iOS.</p>
+                </div>
+            </div>
+            <div class="links"><a href="privacy-policy.html">Politica de confidențialitate</a></div>
+        </div>
+
+        <!-- Hungarian -->
+        <div id="content-hu" class="lang-content">
+            <p class="tagline">Biztonságos QR-kódok – Az Ön adatai, az Ön eszköze, az Ön irányítása</p>
+            <div class="card">
+                <h2>📧 Támogatás elérése</h2>
+                <p>Van kérdése vagy segítségre van szüksége? Itt vagyunk Önért.</p>
+                <a href="mailto:privacyqr@proton.me" class="contact-btn">E-mail küldése</a>
+            </div>
+            <div class="card">
+                <h2>❓ Gyakran ismételt kérdések</h2>
+                <div class="faq-item">
+                    <p class="faq-q">Az adataim a felhőben tárolódnak?</p>
+                    <p class="faq-a">Nem. A PrivacyQR 100%-ban offline működik. Minden QR-kódja és beállítása helyben
+                        tárolódik az eszközön.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Mit jelent a "Burn After Read"?</p>
+                    <p class="faq-a">Ha engedélyezve van, a QR-kód automatikusan törlődik a könyvtárból az egyszeri
+                        megtekintés után.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Mi az a Kill Switch?</p>
+                    <p class="faq-a">A Kill Switch lehetővé teszi egy mentett QR-kód azonnali deaktiválását.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Hogyan állítom vissza a Pro vásárlásomat?</p>
+                    <p class="faq-a">Lépjen a Beállítások → Vásárlások visszaállítása menüpontra.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">Tárolja az alkalmazás a Face ID/Touch ID adatokat?</p>
+                    <p class="faq-a">Nem. A biometrikus hitelesítést teljes egészében az iOS kezeli.</p>
+                </div>
+            </div>
+            <div class="links"><a href="privacy-policy.html">Adatvédelmi irányelvek</a></div>
         </div>
 
         <footer>
             <p>© 2025 PrivacyQR</p>
         </footer>
     </div>
+
+    <script>
+        function setLanguage(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById('content-' + lang).classList.add('active');
+            event.target.classList.add('active');
+            document.documentElement.lang = lang;
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const browserLang = navigator.language.substring(0, 2);
+            const langMap = { 'sv': 'sv', 'en': 'en', 'de': 'de', 'fr': 'fr', 'da': 'da', 'no': 'nb', 'nb': 'nb', 'es': 'es', 'it': 'it', 'nl': 'nl', 'pl': 'pl', 'pt': 'pt', 'el': 'el', 'fi': 'fi', 'cs': 'cs', 'ro': 'ro', 'hu': 'hu' };
+            if (langMap[browserLang]) {
+                const btn = document.querySelector(`.lang-btn[onclick*="'${langMap[browserLang]}'"]`);
+                if (btn) btn.click();
+            }
+        });
+    </script>
 </body>
 
 </html>
