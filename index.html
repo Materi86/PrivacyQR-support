@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrivacyQR – Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: #E2E8F0;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            color: #10B981;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            color: #94A3B8;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            color: #10B981;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #CBD5E1;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-item {
+            text-align: left;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-q {
+            color: #10B981;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-a {
+            color: #CBD5E1;
+            font-size: 0.9rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: #10B981;
+            color: #0F172A;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            margin-top: 1rem;
+        }
+
+        .contact-btn:hover {
+            background: #34D399;
+            transform: translateY(-2px);
+        }
+
+        .links {
+            margin-top: 2rem;
+        }
+
+        .links a {
+            color: #10B981;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 3rem;
+            color: #64748B;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">🔒</div>
+        <h1>PrivacyQR</h1>
+        <p class="tagline">Secure QR Codes – Your Data, Your Device, Your Control</p>
+
+        <div class="card">
+            <h2>📧 Contact Support</h2>
+            <p>Have a question or need help? We're here for you.</p>
+            <a href="mailto:support@privacyqr.app" class="contact-btn">Email Support</a>
+        </div>
+
+        <div class="card">
+            <h2>❓ Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <p class="faq-q">Is my data stored in the cloud?</p>
+                <p class="faq-a">No. PrivacyQR works 100% offline. All your QR codes and settings are stored locally on
+                    your device. We never upload any data to external servers.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-q">What does "Burn After Read" mean?</p>
+                <p class="faq-a">When enabled, a QR code will automatically be deleted from your library after it's been
+                    viewed once. Perfect for sharing temporary information securely.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-q">What is the Kill Switch?</p>
+                <p class="faq-a">The Kill Switch allows you to instantly deactivate a saved QR code, making it appear
+                    invalid if someone tries to use it.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-q">How do I restore my Pro purchase?</p>
+                <p class="faq-a">Go to Settings → Restore Purchases. Your Pro features will be restored using your Apple
+                    ID.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-q">Is Face ID/Touch ID data stored by the app?</p>
+                <p class="faq-a">No. Biometric authentication is handled entirely by iOS. PrivacyQR never accesses or
+                    stores any biometric data.</p>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+
+        <footer>
+            <p>© 2024 PrivacyQR. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

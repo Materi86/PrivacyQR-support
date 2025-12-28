@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy – PrivacyQR</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: #E2E8F0;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            gap: 0.4rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            border: 1px solid rgba(16, 185, 129, 0.5);
+            background: transparent;
+            color: #94A3B8;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+
+        .lang-btn:hover {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10B981;
+        }
+
+        .lang-btn.active {
+            background: #10B981;
+            color: #0F172A;
+            border-color: #10B981;
+        }
+
+        h1 {
+            color: #10B981;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #94A3B8;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        h2 {
+            color: #10B981;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        p {
+            margin-bottom: 0.8rem;
+            color: #CBD5E1;
+            font-size: 0.9rem;
+        }
+
+        .highlight-box {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10B981;
+            padding: 0.8rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: #10B981;
+            font-weight: 500;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.3rem;
+            color: #CBD5E1;
+            font-size: 0.9rem;
+        }
+
+        .summary-table {
+            width: 100%;
+            margin: 1rem 0;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .summary-table th,
+        .summary-table td {
+            padding: 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .summary-table th {
+            color: #94A3B8;
+            font-weight: 500;
+        }
+
+        .status-no {
+            color: #F43F5E;
+        }
+
+        .status-yes {
+            color: #10B981;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #64748B;
+            font-size: 0.8rem;
+        }
+
+        a {
+            color: #10B981;
+            text-decoration: none;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="language-selector">
+            <button class="lang-btn active" onclick="setLanguage('sv')">🇸🇪 Svenska</button>
+            <button class="lang-btn" onclick="setLanguage('en')">🇬🇧 English</button>
+            <button class="lang-btn" onclick="setLanguage('de')">🇩🇪 Deutsch</button>
+            <button class="lang-btn" onclick="setLanguage('fr')">🇫🇷 Français</button>
+            <button class="lang-btn" onclick="setLanguage('da')">🇩🇰 Dansk</button>
+            <button class="lang-btn" onclick="setLanguage('nb')">🇳🇴 Norsk</button>
+            <button class="lang-btn" onclick="setLanguage('es')">🇪🇸 Español</button>
+            <button class="lang-btn" onclick="setLanguage('it')">🇮🇹 Italiano</button>
+            <button class="lang-btn" onclick="setLanguage('nl')">🇳🇱 Nederlands</button>
+            <button class="lang-btn" onclick="setLanguage('pl')">🇵🇱 Polski</button>
+            <button class="lang-btn" onclick="setLanguage('pt')">🇵🇹 Português</button>
+            <button class="lang-btn" onclick="setLanguage('el')">🇬🇷 Ελληνικά</button>
+            <button class="lang-btn" onclick="setLanguage('fi')">🇫🇮 Suomi</button>
+            <button class="lang-btn" onclick="setLanguage('cs')">🇨🇿 Čeština</button>
+            <button class="lang-btn" onclick="setLanguage('ro')">🇷🇴 Română</button>
+            <button class="lang-btn" onclick="setLanguage('hu')">🇭🇺 Magyar</button>
+        </div>
+
+        <!-- Swedish -->
+        <div id="content-sv" class="lang-content active">
+            <h1>🔒 Integritetspolicy</h1>
+            <p class="subtitle">PrivacyQR – Senast uppdaterad: 27 december 2024</p>
+            <div class="highlight-box">
+                <p>Vi samlar inte in någon data. All information stannar på din enhet.</p>
+            </div>
+            <h2>Översikt</h2>
+            <p>PrivacyQR är designad med din integritet som högsta prioritet. Vi samlar inte in, lagrar eller överför
+                någon personlig data till externa servrar.</p>
+            <h2>Datainsamling</h2>
+            <p><strong>Vi samlar inte in någon data.</strong> Appen fungerar helt offline.</p>
+            <h2>Datalagring</h2>
+            <ul>
+                <li><strong>QR-koder:</strong> Sparas lokalt</li>
+                <li><strong>Krypterat innehåll:</strong> Skyddas med CryptoKit</li>
+                <li><strong>Inställningar:</strong> Lagras lokalt</li>
+            </ul>
+            <h2>Biometrisk autentisering</h2>
+            <p>Biometrisk data hanteras helt av iOS.</p>
+            <h2>Tredjepartstjänster</h2>
+            <p>Appen integrerar inte med några tredjepartstjänster.</p>
+            <h2>Delning av data</h2>
+            <p>Vi delar ingen data eftersom vi inte samlar in någon.</p>
+            <h2>Sammanfattning</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Aspekt</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Datainsamling</td>
+                    <td class="status-no">❌ Ingen</td>
+                </tr>
+                <tr>
+                    <td>Molnlagring</td>
+                    <td class="status-no">❌ Ingen</td>
+                </tr>
+                <tr>
+                    <td>Analys/Reklam/Spårning</td>
+                    <td class="status-no">❌ Ingen</td>
+                </tr>
+                <tr>
+                    <td>Endast lokal lagring</td>
+                    <td class="status-yes">✅ Ja</td>
+                </tr>
+            </table>
+            <h2>Kontakt</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – Dina QR-koder, din enhet, din kontroll.</p>
+            </footer>
+        </div>
+
+        <!-- English -->
+        <div id="content-en" class="lang-content">
+            <h1>🔒 Privacy Policy</h1>
+            <p class="subtitle">PrivacyQR – Last updated: December 27, 2024</p>
+            <div class="highlight-box">
+                <p>We do not collect any data. All information stays on your device.</p>
+            </div>
+            <h2>Overview</h2>
+            <p>PrivacyQR is designed with your privacy as the highest priority. We do not collect, store, or transfer
+                any personal data.</p>
+            <h2>Data Collection</h2>
+            <p><strong>We do not collect any data.</strong> The app works completely offline.</p>
+            <h2>Data Storage</h2>
+            <ul>
+                <li><strong>QR codes:</strong> Stored locally</li>
+                <li><strong>Encrypted content:</strong> Protected with CryptoKit</li>
+                <li><strong>Settings:</strong> Stored locally</li>
+            </ul>
+            <h2>Biometric Authentication</h2>
+            <p>Biometric data is handled entirely by iOS.</p>
+            <h2>Third-Party Services</h2>
+            <p>The app does not integrate with any third-party services.</p>
+            <h2>Data Sharing</h2>
+            <p>We do not share any data because we do not collect any.</p>
+            <h2>Summary</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Aspect</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Data Collection</td>
+                    <td class="status-no">❌ None</td>
+                </tr>
+                <tr>
+                    <td>Cloud Storage</td>
+                    <td class="status-no">❌ None</td>
+                </tr>
+                <tr>
+                    <td>Analytics/Ads/Tracking</td>
+                    <td class="status-no">❌ None</td>
+                </tr>
+                <tr>
+                    <td>Local Storage Only</td>
+                    <td class="status-yes">✅ Yes</td>
+                </tr>
+            </table>
+            <h2>Contact</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – Your QR codes, your device, your control.</p>
+            </footer>
+        </div>
+
+        <!-- German -->
+        <div id="content-de" class="lang-content">
+            <h1>🔒 Datenschutzerklärung</h1>
+            <p class="subtitle">PrivacyQR – Zuletzt aktualisiert: 27. Dezember 2024</p>
+            <div class="highlight-box">
+                <p>Wir sammeln keine Daten. Alle Informationen bleiben auf deinem Gerät.</p>
+            </div>
+            <h2>Überblick</h2>
+            <p>PrivacyQR wurde mit deiner Privatsphäre als höchster Priorität entwickelt.</p>
+            <h2>Datenerfassung</h2>
+            <p><strong>Wir sammeln keine Daten.</strong> Die App funktioniert vollständig offline.</p>
+            <h2>Zusammenfassung</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Aspekt</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Datenerfassung</td>
+                    <td class="status-no">❌ Keine</td>
+                </tr>
+                <tr>
+                    <td>Cloud-Speicher</td>
+                    <td class="status-no">❌ Keiner</td>
+                </tr>
+                <tr>
+                    <td>Analyse/Werbung/Tracking</td>
+                    <td class="status-no">❌ Keines</td>
+                </tr>
+                <tr>
+                    <td>Nur lokale Speicherung</td>
+                    <td class="status-yes">✅ Ja</td>
+                </tr>
+            </table>
+            <h2>Kontakt</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – Deine QR-Codes, dein Gerät, deine Kontrolle.</p>
+            </footer>
+        </div>
+
+        <!-- French -->
+        <div id="content-fr" class="lang-content">
+            <h1>🔒 Politique de confidentialité</h1>
+            <p class="subtitle">PrivacyQR – Dernière mise à jour : 27 décembre 2024</p>
+            <div class="highlight-box">
+                <p>Nous ne collectons aucune donnée. Toutes les informations restent sur votre appareil.</p>
+            </div>
+            <h2>Aperçu</h2>
+            <p>PrivacyQR est conçu avec votre confidentialité comme priorité absolue.</p>
+            <h2>Collecte de données</h2>
+            <p><strong>Nous ne collectons aucune donnée.</strong> L'application fonctionne hors ligne.</p>
+            <h2>Résumé</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Aspect</th>
+                    <th>Statut</th>
+                </tr>
+                <tr>
+                    <td>Collecte de données</td>
+                    <td class="status-no">❌ Aucune</td>
+                </tr>
+                <tr>
+                    <td>Stockage cloud</td>
+                    <td class="status-no">❌ Aucun</td>
+                </tr>
+                <tr>
+                    <td>Analyse/Publicité/Suivi</td>
+                    <td class="status-no">❌ Aucun</td>
+                </tr>
+                <tr>
+                    <td>Stockage local uniquement</td>
+                    <td class="status-yes">✅ Oui</td>
+                </tr>
+            </table>
+            <h2>Contact</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – Vos codes QR, votre appareil, votre contrôle.</p>
+            </footer>
+        </div>
+
+        <!-- Danish -->
+        <div id="content-da" class="lang-content">
+            <h1>🔒 Privatlivspolitik</h1>
+            <p class="subtitle">PrivacyQR – Sidst opdateret: 27. december 2024</p>
+            <div class="highlight-box">
+                <p>Vi indsamler ingen data. Alle oplysninger forbliver på din enhed.</p>
+            </div>
+            <h2>Oversigt</h2>
+            <p>PrivacyQR er designet med dit privatliv som højeste prioritet.</p>
+            <h2>Sammenfatning</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Aspekt</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Dataindsamling</td>
+                    <td class="status-no">❌ Ingen</td>
+                </tr>
+                <tr>
+                    <td>Cloudlagring</td>
+                    <td class="status-no">❌ Ingen</td>
+                </tr>
+                <tr>
+                    <td>Analyse/Reklame/Sporing</td>
+                    <td class="status-no">❌ Ingen</td>
+                </tr>
+                <tr>
+                    <td>Kun lokal lagring</td>
+                    <td class="status-yes">✅ Ja</td>
+                </tr>
+            </table>
+            <h2>Kontakt</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – Dine QR-koder, din enhed, din kontrol.</p>
+            </footer>
+        </div>
+
+        <!-- Norwegian -->
+        <div id="content-nb" class="lang-content">
+            <h1>🔒 Personvernerklæring</h1>
+            <p class="subtitle">PrivacyQR – Sist oppdatert: 27. desember 2024</p>
+            <div class="highlight-box">
+                <p>Vi samler ikke inn noen data. All informasjon forblir på enheten din.</p>
+            </div>
+            <h2>Oversikt</h2>
+            <p>PrivacyQR er designet med ditt personvern som høyeste prioritet.</p>
+            <h2>Sammendrag</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Aspekt</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Datainnsamling</td>
+                    <td class="status-no">❌ Ingen</td>
+                </tr>
+                <tr>
+                    <td>Skylagring</td>
+                    <td class="status-no">❌ Ingen</td>
+                </tr>
+                <tr>
+                    <td>Analyse/Reklame/Sporing</td>
+                    <td class="status-no">❌ Ingen</td>
+                </tr>
+                <tr>
+                    <td>Kun lokal lagring</td>
+                    <td class="status-yes">✅ Ja</td>
+                </tr>
+            </table>
+            <h2>Kontakt</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – Dine QR-koder, din enhet, din kontroll.</p>
+            </footer>
+        </div>
+
+        <!-- Spanish -->
+        <div id="content-es" class="lang-content">
+            <h1>🔒 Política de privacidad</h1>
+            <p class="subtitle">PrivacyQR – Última actualización: 27 de diciembre de 2024</p>
+            <div class="highlight-box">
+                <p>No recopilamos ningún dato. Toda la información permanece en tu dispositivo.</p>
+            </div>
+            <h2>Resumen</h2>
+            <p>PrivacyQR está diseñado con tu privacidad como máxima prioridad.</p>
+            <h2>Resumen</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Aspecto</th>
+                    <th>Estado</th>
+                </tr>
+                <tr>
+                    <td>Recopilación de datos</td>
+                    <td class="status-no">❌ Ninguna</td>
+                </tr>
+                <tr>
+                    <td>Almacenamiento en la nube</td>
+                    <td class="status-no">❌ Ninguno</td>
+                </tr>
+                <tr>
+                    <td>Análisis/Publicidad/Seguimiento</td>
+                    <td class="status-no">❌ Ninguno</td>
+                </tr>
+                <tr>
+                    <td>Solo almacenamiento local</td>
+                    <td class="status-yes">✅ Sí</td>
+                </tr>
+            </table>
+            <h2>Contacto</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – Tus códigos QR, tu dispositivo, tu control.</p>
+            </footer>
+        </div>
+
+        <!-- Italian -->
+        <div id="content-it" class="lang-content">
+            <h1>🔒 Informativa sulla privacy</h1>
+            <p class="subtitle">PrivacyQR – Ultimo aggiornamento: 27 dicembre 2024</p>
+            <div class="highlight-box">
+                <p>Non raccogliamo alcun dato. Tutte le informazioni rimangono sul tuo dispositivo.</p>
+            </div>
+            <h2>Panoramica</h2>
+            <p>PrivacyQR è progettato con la tua privacy come massima priorità.</p>
+            <h2>Riepilogo</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Aspetto</th>
+                    <th>Stato</th>
+                </tr>
+                <tr>
+                    <td>Raccolta dati</td>
+                    <td class="status-no">❌ Nessuna</td>
+                </tr>
+                <tr>
+                    <td>Archiviazione cloud</td>
+                    <td class="status-no">❌ Nessuna</td>
+                </tr>
+                <tr>
+                    <td>Analisi/Pubblicità/Tracciamento</td>
+                    <td class="status-no">❌ Nessuno</td>
+                </tr>
+                <tr>
+                    <td>Solo archiviazione locale</td>
+                    <td class="status-yes">✅ Sì</td>
+                </tr>
+            </table>
+            <h2>Contatto</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – I tuoi codici QR, il tuo dispositivo, il tuo controllo.</p>
+            </footer>
+        </div>
+
+        <!-- Dutch -->
+        <div id="content-nl" class="lang-content">
+            <h1>🔒 Privacybeleid</h1>
+            <p class="subtitle">PrivacyQR – Laatst bijgewerkt: 27 december 2024</p>
+            <div class="highlight-box">
+                <p>We verzamelen geen gegevens. Alle informatie blijft op je apparaat.</p>
+            </div>
+            <h2>Overzicht</h2>
+            <p>PrivacyQR is ontworpen met jouw privacy als hoogste prioriteit.</p>
+            <h2>Samenvatting</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Aspect</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Gegevensverzameling</td>
+                    <td class="status-no">❌ Geen</td>
+                </tr>
+                <tr>
+                    <td>Cloudopslag</td>
+                    <td class="status-no">❌ Geen</td>
+                </tr>
+                <tr>
+                    <td>Analyse/Advertenties/Tracking</td>
+                    <td class="status-no">❌ Geen</td>
+                </tr>
+                <tr>
+                    <td>Alleen lokale opslag</td>
+                    <td class="status-yes">✅ Ja</td>
+                </tr>
+            </table>
+            <h2>Contact</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – Jouw QR-codes, jouw apparaat, jouw controle.</p>
+            </footer>
+        </div>
+
+        <!-- Polish -->
+        <div id="content-pl" class="lang-content">
+            <h1>🔒 Polityka prywatności</h1>
+            <p class="subtitle">PrivacyQR – Ostatnia aktualizacja: 27 grudnia 2024</p>
+            <div class="highlight-box">
+                <p>Nie zbieramy żadnych danych. Wszystkie informacje pozostają na twoim urządzeniu.</p>
+            </div>
+            <h2>Przegląd</h2>
+            <p>PrivacyQR został zaprojektowany z twoją prywatnością jako najwyższym priorytetem.</p>
+            <h2>Podsumowanie</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Aspekt</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Zbieranie danych</td>
+                    <td class="status-no">❌ Brak</td>
+                </tr>
+                <tr>
+                    <td>Przechowywanie w chmurze</td>
+                    <td class="status-no">❌ Brak</td>
+                </tr>
+                <tr>
+                    <td>Analityka/Reklamy/Śledzenie</td>
+                    <td class="status-no">❌ Brak</td>
+                </tr>
+                <tr>
+                    <td>Tylko lokalne przechowywanie</td>
+                    <td class="status-yes">✅ Tak</td>
+                </tr>
+            </table>
+            <h2>Kontakt</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – Twoje kody QR, twoje urządzenie, twoja kontrola.</p>
+            </footer>
+        </div>
+
+        <!-- Portuguese -->
+        <div id="content-pt" class="lang-content">
+            <h1>🔒 Política de Privacidade</h1>
+            <p class="subtitle">PrivacyQR – Última atualização: 27 de dezembro de 2024</p>
+            <div class="highlight-box">
+                <p>Não recolhemos quaisquer dados. Todas as informações permanecem no seu dispositivo.</p>
+            </div>
+            <h2>Visão geral</h2>
+            <p>O PrivacyQR foi concebido com a sua privacidade como prioridade máxima.</p>
+            <h2>Resumo</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Aspeto</th>
+                    <th>Estado</th>
+                </tr>
+                <tr>
+                    <td>Recolha de dados</td>
+                    <td class="status-no">❌ Nenhuma</td>
+                </tr>
+                <tr>
+                    <td>Armazenamento na nuvem</td>
+                    <td class="status-no">❌ Nenhum</td>
+                </tr>
+                <tr>
+                    <td>Análise/Publicidade/Rastreamento</td>
+                    <td class="status-no">❌ Nenhum</td>
+                </tr>
+                <tr>
+                    <td>Apenas armazenamento local</td>
+                    <td class="status-yes">✅ Sim</td>
+                </tr>
+            </table>
+            <h2>Contacto</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – Os seus códigos QR, o seu dispositivo, o seu controlo.</p>
+            </footer>
+        </div>
+
+        <!-- Greek -->
+        <div id="content-el" class="lang-content">
+            <h1>🔒 Πολιτική Απορρήτου</h1>
+            <p class="subtitle">PrivacyQR – Τελευταία ενημέρωση: 27 Δεκεμβρίου 2024</p>
+            <div class="highlight-box">
+                <p>Δεν συλλέγουμε κανένα δεδομένο. Όλες οι πληροφορίες παραμένουν στη συσκευή σας.</p>
+            </div>
+            <h2>Επισκόπηση</h2>
+            <p>Το PrivacyQR σχεδιάστηκε με την ιδιωτικότητά σας ως ύψιστη προτεραιότητα.</p>
+            <h2>Περίληψη</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Πτυχή</th>
+                    <th>Κατάσταση</th>
+                </tr>
+                <tr>
+                    <td>Συλλογή δεδομένων</td>
+                    <td class="status-no">❌ Καμία</td>
+                </tr>
+                <tr>
+                    <td>Αποθήκευση στο cloud</td>
+                    <td class="status-no">❌ Καμία</td>
+                </tr>
+                <tr>
+                    <td>Ανάλυση/Διαφήμιση/Παρακολούθηση</td>
+                    <td class="status-no">❌ Καμία</td>
+                </tr>
+                <tr>
+                    <td>Μόνο τοπική αποθήκευση</td>
+                    <td class="status-yes">✅ Ναι</td>
+                </tr>
+            </table>
+            <h2>Επικοινωνία</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – Οι κωδικοί QR σας, η συσκευή σας, ο έλεγχός σας.</p>
+            </footer>
+        </div>
+
+        <!-- Finnish -->
+        <div id="content-fi" class="lang-content">
+            <h1>🔒 Tietosuojakäytäntö</h1>
+            <p class="subtitle">PrivacyQR – Viimeksi päivitetty: 27. joulukuuta 2024</p>
+            <div class="highlight-box">
+                <p>Emme kerää mitään tietoja. Kaikki tiedot pysyvät laitteellasi.</p>
+            </div>
+            <h2>Yleiskatsaus</h2>
+            <p>PrivacyQR on suunniteltu yksityisyytesi ollessa korkein prioriteetti.</p>
+            <h2>Yhteenveto</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Näkökohta</th>
+                    <th>Tila</th>
+                </tr>
+                <tr>
+                    <td>Tietojen keruu</td>
+                    <td class="status-no">❌ Ei mitään</td>
+                </tr>
+                <tr>
+                    <td>Pilvipalvelu</td>
+                    <td class="status-no">❌ Ei mitään</td>
+                </tr>
+                <tr>
+                    <td>Analytiikka/Mainokset/Seuranta</td>
+                    <td class="status-no">❌ Ei mitään</td>
+                </tr>
+                <tr>
+                    <td>Vain paikallinen tallennus</td>
+                    <td class="status-yes">✅ Kyllä</td>
+                </tr>
+            </table>
+            <h2>Yhteystiedot</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – Sinun QR-koodisi, sinun laitteesi, sinun hallintasi.</p>
+            </footer>
+        </div>
+
+        <!-- Czech -->
+        <div id="content-cs" class="lang-content">
+            <h1>🔒 Zásady ochrany osobních údajů</h1>
+            <p class="subtitle">PrivacyQR – Naposledy aktualizováno: 27. prosince 2024</p>
+            <div class="highlight-box">
+                <p>Neshromažďujeme žádná data. Všechny informace zůstávají na vašem zařízení.</p>
+            </div>
+            <h2>Přehled</h2>
+            <p>PrivacyQR byl navržen s vaším soukromím jako nejvyšší prioritou.</p>
+            <h2>Shrnutí</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Aspekt</th>
+                    <th>Stav</th>
+                </tr>
+                <tr>
+                    <td>Sběr dat</td>
+                    <td class="status-no">❌ Žádný</td>
+                </tr>
+                <tr>
+                    <td>Cloudové úložiště</td>
+                    <td class="status-no">❌ Žádné</td>
+                </tr>
+                <tr>
+                    <td>Analytika/Reklamy/Sledování</td>
+                    <td class="status-no">❌ Žádné</td>
+                </tr>
+                <tr>
+                    <td>Pouze místní úložiště</td>
+                    <td class="status-yes">✅ Ano</td>
+                </tr>
+            </table>
+            <h2>Kontakt</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – Vaše QR kódy, vaše zařízení, vaše kontrola.</p>
+            </footer>
+        </div>
+
+        <!-- Romanian -->
+        <div id="content-ro" class="lang-content">
+            <h1>🔒 Politica de confidențialitate</h1>
+            <p class="subtitle">PrivacyQR – Ultima actualizare: 27 decembrie 2024</p>
+            <div class="highlight-box">
+                <p>Nu colectăm niciun fel de date. Toate informațiile rămân pe dispozitivul tău.</p>
+            </div>
+            <h2>Prezentare generală</h2>
+            <p>PrivacyQR a fost conceput cu confidențialitatea ta ca prioritate maximă.</p>
+            <h2>Rezumat</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Aspect</th>
+                    <th>Stare</th>
+                </tr>
+                <tr>
+                    <td>Colectarea datelor</td>
+                    <td class="status-no">❌ Niciuna</td>
+                </tr>
+                <tr>
+                    <td>Stocare în cloud</td>
+                    <td class="status-no">❌ Niciuna</td>
+                </tr>
+                <tr>
+                    <td>Analiză/Publicitate/Urmărire</td>
+                    <td class="status-no">❌ Niciuna</td>
+                </tr>
+                <tr>
+                    <td>Doar stocare locală</td>
+                    <td class="status-yes">✅ Da</td>
+                </tr>
+            </table>
+            <h2>Contact</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – Codurile tale QR, dispozitivul tău, controlul tău.</p>
+            </footer>
+        </div>
+
+        <!-- Hungarian -->
+        <div id="content-hu" class="lang-content">
+            <h1>🔒 Adatvédelmi irányelvek</h1>
+            <p class="subtitle">PrivacyQR – Utolsó frissítés: 2024. december 27.</p>
+            <div class="highlight-box">
+                <p>Nem gyűjtünk semmilyen adatot. Minden információ az eszközén marad.</p>
+            </div>
+            <h2>Áttekintés</h2>
+            <p>A PrivacyQR az Ön magánéletének védelmét tartotta szem előtt.</p>
+            <h2>Összefoglalás</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Szempont</th>
+                    <th>Állapot</th>
+                </tr>
+                <tr>
+                    <td>Adatgyűjtés</td>
+                    <td class="status-no">❌ Nincs</td>
+                </tr>
+                <tr>
+                    <td>Felhőtárolás</td>
+                    <td class="status-no">❌ Nincs</td>
+                </tr>
+                <tr>
+                    <td>Elemzés/Hirdetések/Követés</td>
+                    <td class="status-no">❌ Nincs</td>
+                </tr>
+                <tr>
+                    <td>Csak helyi tárolás</td>
+                    <td class="status-yes">✅ Igen</td>
+                </tr>
+            </table>
+            <h2>Kapcsolat</h2>
+            <p><a href="mailto:privacy@privacyqr.app">privacy@privacyqr.app</a></p>
+            <footer>
+                <p>PrivacyQR – Az Ön QR-kódjai, az Ön eszköze, az Ön irányítása.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById('content-' + lang).classList.add('active');
+            event.target.classList.add('active');
+            document.documentElement.lang = lang;
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const browserLang = navigator.language.substring(0, 2);
+            const langMap = { 'sv': 'sv', 'en': 'en', 'de': 'de', 'fr': 'fr', 'da': 'da', 'no': 'nb', 'nb': 'nb', 'es': 'es', 'it': 'it', 'nl': 'nl', 'pl': 'pl', 'pt': 'pt', 'el': 'el', 'fi': 'fi', 'cs': 'cs', 'ro': 'ro', 'hu': 'hu' };
+            if (langMap[browserLang]) {
+                const btn = document.querySelector(`.lang-btn[onclick*="'${langMap[browserLang]}'"]`);
+                if (btn) btn.click();
+            }
+        });
+    </script>
+</body>
+
+</html>
