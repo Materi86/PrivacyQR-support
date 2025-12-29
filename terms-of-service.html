@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -383,12 +383,12 @@
             <div class="lang-selector">
                 <div class="lang-dropdown" id="langDropdown">
                     <button class="lang-dropdown-trigger" onclick="toggleLangMenu()">
-                        <span id="currentLangDisplay">🇸🇪 Svenska</span>
+                        <span id="currentLangDisplay">�� English</span>
                         <span class="chevron">▾</span>
                     </button>
                     <div class="lang-dropdown-menu" id="langMenu">
-                        <div class="lang-option active" onclick="setLanguage('sv')">🇸🇪 Svenska</div>
-                        <div class="lang-option" onclick="setLanguage('en')">🇬🇧 English</div>
+                        <div class="lang-option" onclick="setLanguage('sv')">🇸🇪 Svenska</div>
+                        <div class="lang-option active" onclick="setLanguage('en')">🇬🇧 English</div>
                         <div class="lang-option" onclick="setLanguage('de')">🇩🇪 Deutsch</div>
                         <div class="lang-option" onclick="setLanguage('fr')">🇫🇷 Français</div>
                         <div class="lang-option" onclick="setLanguage('da')">🇩🇰 Dansk</div>
@@ -408,7 +408,7 @@
             </div>
 
             <!-- 🇸🇪 Svenska -->
-            <div id="content-sv" class="lang-content active">
+            <div id="content-sv" class="lang-content">
                 <h1>📜 Användarvillkor</h1>
                 <p class="subtitle">Ikraftträdandedatum: 2025-01-01</p>
                 <p>Dessa användarvillkor reglerar din användning av PrivacyQR. Genom att använda appen godkänner du
@@ -441,7 +441,7 @@
             </div>
 
             <!-- 🇬🇧 English -->
-            <div id="content-en" class="lang-content ">
+            <div id="content-en" class="lang-content active">
                 <h1>📜 Terms of Use</h1>
                 <p class="subtitle">Effective Date: 2025-01-01</p>
                 <p>These terms of use govern your use of PrivacyQR. By using the app, you agree to the terms.</p>
@@ -947,6 +947,12 @@
     </div>
 
     <script>
+        // Force scroll to top
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
         function toggleLangMenu() {
             const dropdown = document.getElementById('langDropdown');
             dropdown.classList.toggle('active');

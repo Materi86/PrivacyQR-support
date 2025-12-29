@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrivacyQR – Support</title>
+    <title>PrivacyQR - Secure & Offline QR Code Scanner for iOS</title>
+    <meta name="description"
+        content="PrivacyQR is the secure, offline-first QR code scanner and generator for iOS. No ads, no tracking. Features Burn After Read and App Lock. Download now.">
+    <meta name="keywords"
+        content="QR code scanner, QR reader, privacy, offline QR, secure qr code, no ads scanner, iOS, swift, burn after read, privacyqr">
+    <meta name="author" content="Isberg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://materi86.github.io/PrivacyQR-support/">
+    <meta property="og:title" content="PrivacyQR - Secure & Offline QR Code Scanner">
+    <meta property="og:description"
+        content="The only QR scanner that respects your privacy. 100% Offline, No Ads. Take control of your data today on iOS.">
+    <meta property="og:image" content="https://materi86.github.io/PrivacyQR-support/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://materi86.github.io/PrivacyQR-support/">
+    <meta property="twitter:title" content="PrivacyQR - Secure & Offline QR Code Scanner">
+    <meta property="twitter:description"
+        content="The only QR scanner that respects your privacy. 100% Offline, No Ads. Take control of your data today on iOS.">
+    <meta property="twitter:image" content="https://materi86.github.io/PrivacyQR-support/logo.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PrivacyQR",
+      "operatingSystem": "iOS",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "PrivacyQR is the secure, offline-first QR code scanner and generator designed for privacy.",
+      "author": {
+          "@type": "Person",
+          "name": "Mattias Isberg"
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -443,12 +486,12 @@
         <div class="lang-selector">
             <div class="lang-dropdown" id="langDropdown">
                 <button class="lang-dropdown-trigger" onclick="toggleLangMenu()">
-                    <span id="currentLangDisplay">🇸🇪 Svenska</span>
+                    <span id="currentLangDisplay">🇬🇧 English</span>
                     <span class="chevron">▾</span>
                 </button>
                 <div class="lang-dropdown-menu" id="langMenu">
-                    <div class="lang-option active" onclick="setLanguage('sv')">🇸🇪 Svenska</div>
-                    <div class="lang-option" onclick="setLanguage('en')">🇬🇧 English</div>
+                    <div class="lang-option" onclick="setLanguage('sv')">🇸🇪 Svenska</div>
+                    <div class="lang-option active" onclick="setLanguage('en')">🇬🇧 English</div>
                     <div class="lang-option" onclick="setLanguage('de')">🇩🇪 Deutsch</div>
                     <div class="lang-option" onclick="setLanguage('fr')">🇫🇷 Français</div>
                     <div class="lang-option" onclick="setLanguage('da')">🇩🇰 Dansk</div>
@@ -476,7 +519,7 @@
         </header>
 
         <!-- Swedish -->
-        <div id="content-sv" class="lang-content active">
+        <div id="content-sv" class="lang-content">
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon">✉️</div>
@@ -524,7 +567,7 @@
         </div>
 
         <!-- English -->
-        <div id="content-en" class="lang-content">
+        <div id="content-en" class="lang-content active">
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon">✉️</div>
@@ -1203,6 +1246,12 @@
     </div>
 
     <script>
+        // Force scroll to top
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
         const taglines = {
             sv: 'Din data · Din enhet · Din kontroll',
             en: 'Your Data · Your Device · Your Control',
