@@ -9,14 +9,14 @@
         content="PrivacyQR is the secure, offline-first QR code scanner and generator for iOS. No ads, no tracking. Features Burn After Read and App Lock. Download now.">
     <meta name="keywords"
         content="QR code scanner, QR reader, privacy, offline QR, secure qr code, no ads scanner, iOS, swift, burn after read, privacyqr">
-    <meta name="author" content="Isberg">
+    <meta name="author" content="Mattias Isberg">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://materi86.github.io/PrivacyQR-support/">
     <meta property="og:title" content="PrivacyQR - Secure & Offline QR Code Scanner">
     <meta property="og:description"
-        content="The only QR scanner that respects your privacy. 100% Offline, No Ads. Take control of your data today on iOS.">
+        content="Scan and create QR codes locally. No advertising or tracking SDKs. Learn about sharing, storage and support privacy.">
     <meta property="og:image" content="https://materi86.github.io/PrivacyQR-support/logo.png">
 
     <!-- Twitter -->
@@ -24,7 +24,7 @@
     <meta property="twitter:url" content="https://materi86.github.io/PrivacyQR-support/">
     <meta property="twitter:title" content="PrivacyQR - Secure & Offline QR Code Scanner">
     <meta property="twitter:description"
-        content="The only QR scanner that respects your privacy. 100% Offline, No Ads. Take control of your data today on iOS.">
+        content="Scan and create QR codes locally. No advertising or tracking SDKs. Learn about sharing, storage and support privacy.">
     <meta property="twitter:image" content="https://materi86.github.io/PrivacyQR-support/logo.png">
 
     <!-- Structured Data -->
@@ -35,11 +35,6 @@
       "name": "PrivacyQR",
       "operatingSystem": "iOS",
       "applicationCategory": "UtilitiesApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
       "description": "PrivacyQR is the secure, offline-first QR code scanner and generator designed for privacy.",
       "author": {
           "@type": "Person",
@@ -47,12 +42,6 @@
       }
     }
     </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"
-        rel="stylesheet">
     <style>
         :root {
             --trust-navy: #0F172A;
@@ -82,6 +71,7 @@
             min-height: 100vh;
             line-height: 1.7;
             overflow-x: hidden;
+            overflow-wrap: anywhere;
         }
 
         /* Animated background */
@@ -519,730 +509,392 @@
         </header>
 
         <!-- Swedish -->
-        <div id="content-sv" class="lang-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Kontakta support</h2>
-                </div>
-                <p>Har du en fråga eller behöver hjälp? Vi finns här för dig.</p>
-                <a href="mailto:privacyqr@proton.me" class="contact-btn">Skicka e-post →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Vanliga frågor</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Lagras min data i molnet?</p>
-                    <p class="faq-a">Nej. PrivacyQR fungerar 100% offline. Alla dina QR-koder och inställningar lagras
-                        lokalt på din enhet.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Vad betyder "Burn After Read"?</p>
-                    <p class="faq-a">När det är aktiverat raderas en QR-kod automatiskt från ditt bibliotek efter att
-                        den visats en gång.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Vad är Kill Switch?</p>
-                    <p class="faq-a">Kill Switch låter dig omedelbart avaktivera en sparad QR-kod så att den blir
-                        ogiltig.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Hur återställer jag mitt Pro-köp?</p>
-                    <p class="faq-a">Gå till Inställningar → Återställ köp. Dina Pro-funktioner återställs med ditt
-                        Apple-ID.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Lagrar appen Face ID/Touch ID-data?</p>
-                    <p class="faq-a">Nej. Biometrisk autentisering hanteras helt av iOS. PrivacyQR kommer aldrig åt
-                        biometriska data.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Integritetspolicy</a> | <a
-                        href="terms-of-service.html">Användarvillkor</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
-
-        <!-- English -->
-        <div id="content-en" class="lang-content active">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Contact Support</h2>
-                </div>
-                <p>Have a question or need help? We're here for you.</p>
-                <a href="mailto:privacyqr@proton.me" class="contact-btn">Send Email →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Frequently Asked Questions</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Is my data stored in the cloud?</p>
-                    <p class="faq-a">No. PrivacyQR works 100% offline. All your QR codes and settings are stored locally
-                        on your device.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">What does "Burn After Read" mean?</p>
-                    <p class="faq-a">When enabled, a QR code will automatically be deleted from your library after it's
-                        been viewed once.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">What is the Kill Switch?</p>
-                    <p class="faq-a">The Kill Switch allows you to instantly deactivate a saved QR code, making it
-                        invalid.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">How do I restore my Pro purchase?</p>
-                    <p class="faq-a">Go to Settings → Restore Purchases. Your Pro features will be restored using your
-                        Apple ID.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Is Face ID/Touch ID data stored by the app?</p>
-                    <p class="faq-a">No. Biometric authentication is handled entirely by iOS. PrivacyQR never accesses
-                        biometric data.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Privacy Policy</a> | <a
-                        href="terms-of-service.html">Terms of Use</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
-
-        <!-- German -->
-        <div id="content-de" class="lang-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Support kontaktieren</h2>
-                </div>
-                <p>Hast du eine Frage oder brauchst Hilfe? Wir sind für dich da.</p><a href="mailto:privacyqr@proton.me"
-                    class="contact-btn">E-Mail senden →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Häufig gestellte Fragen</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Werden meine Daten in der Cloud gespeichert?</p>
-                    <p class="faq-a">Nein. PrivacyQR funktioniert 100% offline. Alle deine QR-Codes und Einstellungen
-                        werden lokal auf deinem Gerät gespeichert.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Was bedeutet "Burn After Read"?</p>
-                    <p class="faq-a">Wenn aktiviert, wird ein QR-Code automatisch aus deiner Bibliothek gelöscht,
-                        nachdem er einmal angezeigt wurde.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Was ist der Kill Switch?</p>
-                    <p class="faq-a">Mit dem Kill Switch kannst du einen gespeicherten QR-Code sofort deaktivieren.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Wie stelle ich meinen Pro-Kauf wieder her?</p>
-                    <p class="faq-a">Gehe zu Einstellungen → Käufe wiederherstellen.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Speichert die App Face ID/Touch ID-Daten?</p>
-                    <p class="faq-a">Nein. Die biometrische Authentifizierung wird vollständig von iOS verwaltet.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Datenschutzerklärung</a> | <a
-                        href="terms-of-service.html">Nutzungsbedingungen</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
-
-        <!-- French -->
-        <div id="content-fr" class="lang-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Contacter le support</h2>
-                </div>
-                <p>Vous avez une question ou besoin d'aide ? Nous sommes là pour vous.</p><a
-                    href="mailto:privacyqr@proton.me" class="contact-btn">Envoyer un e-mail →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Questions fréquentes</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Mes données sont-elles stockées dans le cloud ?</p>
-                    <p class="faq-a">Non. PrivacyQR fonctionne 100% hors ligne. Tous vos codes QR et paramètres sont
-                        stockés localement.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Que signifie "Burn After Read" ?</p>
-                    <p class="faq-a">Une fois activé, un code QR sera automatiquement supprimé après avoir été affiché
-                        une fois.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Qu'est-ce que le Kill Switch ?</p>
-                    <p class="faq-a">Le Kill Switch vous permet de désactiver instantanément un code QR enregistré.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Comment restaurer mon achat Pro ?</p>
-                    <p class="faq-a">Allez dans Paramètres → Restaurer les achats.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">L'app stocke-t-elle les données Face ID/Touch ID ?</p>
-                    <p class="faq-a">Non. L'authentification biométrique est entièrement gérée par iOS.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Politique de confidentialité</a> | <a
-                        href="terms-of-service.html">Conditions d'utilisation</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
-
-        <!-- Danish -->
-        <div id="content-da" class="lang-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Kontakt support</h2>
-                </div>
-                <p>Har du et spørgsmål eller brug for hjælp? Vi er her for dig.</p><a href="mailto:privacyqr@proton.me"
-                    class="contact-btn">Send e-mail →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Ofte stillede spørgsmål</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Gemmes mine data i skyen?</p>
-                    <p class="faq-a">Nej. PrivacyQR fungerer 100% offline. Alle dine QR-koder og indstillinger gemmes
-                        lokalt på din enhed.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Hvad betyder "Burn After Read"?</p>
-                    <p class="faq-a">Når det er aktiveret, slettes en QR-kode automatisk fra dit bibliotek, efter den er
-                        blevet vist én gang.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Hvad er Kill Switch?</p>
-                    <p class="faq-a">Kill Switch lader dig øjeblikkeligt deaktivere en gemt QR-kode.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Hvordan gendanner jeg mit Pro-køb?</p>
-                    <p class="faq-a">Gå til Indstillinger → Gendan køb.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Gemmer appen Face ID/Touch ID-data?</p>
-                    <p class="faq-a">Nej. Biometrisk godkendelse håndteres helt af iOS.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Privatlivspolitik</a> | <a
-                        href="terms-of-service.html">Brugervilkår</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
-
-        <!-- Norwegian -->
-        <div id="content-nb" class="lang-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Kontakt support</h2>
-                </div>
-                <p>Har du et spørsmål eller trenger hjelp? Vi er her for deg.</p><a href="mailto:privacyqr@proton.me"
-                    class="contact-btn">Send e-post →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Ofte stilte spørsmål</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Lagres dataene mine i skyen?</p>
-                    <p class="faq-a">Nei. PrivacyQR fungerer 100% offline. Alle QR-kodene og innstillingene dine lagres
-                        lokalt.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Hva betyr "Burn After Read"?</p>
-                    <p class="faq-a">Når det er aktivert, slettes en QR-kode automatisk fra biblioteket ditt etter at
-                        den har blitt vist én gang.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Hva er Kill Switch?</p>
-                    <p class="faq-a">Kill Switch lar deg umiddelbart deaktivere en lagret QR-kode.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Hvordan gjenoppretter jeg Pro-kjøpet mitt?</p>
-                    <p class="faq-a">Gå til Innstillinger → Gjenopprett kjøp.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Lagrer appen Face ID/Touch ID-data?</p>
-                    <p class="faq-a">Nei. Biometrisk autentisering håndteres helt av iOS.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Personvernerklæring</a> | <a
-                        href="terms-of-service.html">Brukervilkår</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
-
-        <!-- Spanish -->
-        <div id="content-es" class="lang-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Contactar soporte</h2>
-                </div>
-                <p>¿Tienes una pregunta o necesitas ayuda? Estamos aquí para ti.</p><a href="mailto:privacyqr@proton.me"
-                    class="contact-btn">Enviar email →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Preguntas frecuentes</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">¿Se almacenan mis datos en la nube?</p>
-                    <p class="faq-a">No. PrivacyQR funciona 100% sin conexión. Todos tus códigos QR y ajustes se
-                        almacenan localmente.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">¿Qué significa "Burn After Read"?</p>
-                    <p class="faq-a">Cuando está activado, un código QR se eliminará automáticamente después de
-                        mostrarse una vez.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">¿Qué es el Kill Switch?</p>
-                    <p class="faq-a">El Kill Switch te permite desactivar instantáneamente un código QR guardado.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">¿Cómo restauro mi compra Pro?</p>
-                    <p class="faq-a">Ve a Ajustes → Restaurar compras.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">¿La app almacena datos de Face ID/Touch ID?</p>
-                    <p class="faq-a">No. La autenticación biométrica es manejada completamente por iOS.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Política de privacidad</a> | <a
-                        href="terms-of-service.html">Términos de uso</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
-
-        <!-- Italian -->
-        <div id="content-it" class="lang-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Contatta il supporto</h2>
-                </div>
-                <p>Hai una domanda o hai bisogno di aiuto? Siamo qui per te.</p><a href="mailto:privacyqr@proton.me"
-                    class="contact-btn">Invia email →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Domande frequenti</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">I miei dati vengono archiviati nel cloud?</p>
-                    <p class="faq-a">No. PrivacyQR funziona al 100% offline. Tutti i tuoi codici QR e le impostazioni
-                        sono archiviati localmente.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Cosa significa "Burn After Read"?</p>
-                    <p class="faq-a">Quando attivato, un codice QR verrà eliminato automaticamente dopo essere stato
-                        visualizzato una volta.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Cos'è il Kill Switch?</p>
-                    <p class="faq-a">Il Kill Switch ti permette di disattivare istantaneamente un codice QR salvato.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Come ripristino il mio acquisto Pro?</p>
-                    <p class="faq-a">Vai su Impostazioni → Ripristina acquisti.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">L'app memorizza i dati di Face ID/Touch ID?</p>
-                    <p class="faq-a">No. L'autenticazione biometrica è gestita interamente da iOS.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Informativa sulla privacy</a> | <a
-                        href="terms-of-service.html">Termini di servizio</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
-
-        <!-- Dutch -->
-        <div id="content-nl" class="lang-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Contact support</h2>
-                </div>
-                <p>Heb je een vraag of hulp nodig? We zijn er voor je.</p><a href="mailto:privacyqr@proton.me"
-                    class="contact-btn">E-mail sturen →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Veelgestelde vragen</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Worden mijn gegevens in de cloud opgeslagen?</p>
-                    <p class="faq-a">Nee. PrivacyQR werkt 100% offline. Al je QR-codes en instellingen worden lokaal
-                        opgeslagen.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Wat betekent "Burn After Read"?</p>
-                    <p class="faq-a">Wanneer ingeschakeld, wordt een QR-code automatisch verwijderd nadat deze één keer
-                        is bekeken.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Wat is de Kill Switch?</p>
-                    <p class="faq-a">Met de Kill Switch kun je een opgeslagen QR-code direct deactiveren.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Hoe herstel ik mijn Pro-aankoop?</p>
-                    <p class="faq-a">Ga naar Instellingen → Aankopen herstellen.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Slaat de app Face ID/Touch ID-gegevens op?</p>
-                    <p class="faq-a">Nee. Biometrische authenticatie wordt volledig door iOS afgehandeld.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Privacybeleid</a> | <a
-                        href="terms-of-service.html">Gebruiksvoorwaarden</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
-
-        <!-- Polish -->
-        <div id="content-pl" class="lang-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Skontaktuj się ze wsparciem</h2>
-                </div>
-                <p>Masz pytanie lub potrzebujesz pomocy? Jesteśmy tu dla Ciebie.</p><a href="mailto:privacyqr@proton.me"
-                    class="contact-btn">Wyślij e-mail →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Często zadawane pytania</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Czy moje dane są przechowywane w chmurze?</p>
-                    <p class="faq-a">Nie. PrivacyQR działa w 100% offline. Wszystkie Twoje kody QR i ustawienia są
-                        przechowywane lokalnie.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Co oznacza "Burn After Read"?</p>
-                    <p class="faq-a">Po włączeniu kod QR zostanie automatycznie usunięty po jednokrotnym wyświetleniu.
-                    </p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Czym jest Kill Switch?</p>
-                    <p class="faq-a">Kill Switch pozwala natychmiast dezaktywować zapisany kod QR.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Jak przywrócić zakup Pro?</p>
-                    <p class="faq-a">Przejdź do Ustawienia → Przywróć zakupy.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Czy aplikacja przechowuje dane Face ID/Touch ID?</p>
-                    <p class="faq-a">Nie. Uwierzytelnianie biometryczne jest obsługiwane całkowicie przez iOS.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Polityka prywatności</a> | <a
-                        href="terms-of-service.html">Warunki użytkowania</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
-
-        <!-- Portuguese -->
-        <div id="content-pt" class="lang-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Contactar suporte</h2>
-                </div>
-                <p>Tem uma pergunta ou precisa de ajuda? Estamos aqui para si.</p><a href="mailto:privacyqr@proton.me"
-                    class="contact-btn">Enviar e-mail →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Perguntas frequentes</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Os meus dados são armazenados na nuvem?</p>
-                    <p class="faq-a">Não. O PrivacyQR funciona 100% offline. Todos os seus códigos QR e definições são
-                        armazenados localmente.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">O que significa "Burn After Read"?</p>
-                    <p class="faq-a">Quando ativado, um código QR será automaticamente eliminado após ser visualizado
-                        uma vez.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">O que é o Kill Switch?</p>
-                    <p class="faq-a">O Kill Switch permite-lhe desativar instantaneamente um código QR guardado.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Como restauro a minha compra Pro?</p>
-                    <p class="faq-a">Vá a Definições → Restaurar compras.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">A app armazena dados de Face ID/Touch ID?</p>
-                    <p class="faq-a">Não. A autenticação biométrica é tratada inteiramente pelo iOS.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Política de Privacidade</a> | <a
-                        href="terms-of-service.html">Termos de Uso</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
-
-        <!-- Greek -->
-        <div id="content-el" class="lang-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Επικοινωνία με υποστήριξη</h2>
-                </div>
-                <p>Έχετε ερώτηση ή χρειάζεστε βοήθεια; Είμαστε εδώ για εσάς.</p><a href="mailto:privacyqr@proton.me"
-                    class="contact-btn">Αποστολή email →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Συχνές ερωτήσεις</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Αποθηκεύονται τα δεδομένα μου στο cloud;</p>
-                    <p class="faq-a">Όχι. Το PrivacyQR λειτουργεί 100% offline. Όλοι οι κωδικοί QR και οι ρυθμίσεις
-                        αποθηκεύονται τοπικά.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Τι σημαίνει "Burn After Read";</p>
-                    <p class="faq-a">Όταν είναι ενεργοποιημένο, ένας κωδικός QR θα διαγραφεί αυτόματα μετά την προβολή
-                        του μία φορά.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Τι είναι το Kill Switch;</p>
-                    <p class="faq-a">Το Kill Switch σας επιτρέπει να απενεργοποιήσετε άμεσα έναν αποθηκευμένο κωδικό QR.
-                    </p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Πώς επαναφέρω την αγορά Pro;</p>
-                    <p class="faq-a">Μεταβείτε στις Ρυθμίσεις → Επαναφορά αγορών.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Αποθηκεύει η εφαρμογή δεδομένα Face ID/Touch ID;</p>
-                    <p class="faq-a">Όχι. Ο βιομετρικός έλεγχος ταυτότητας διαχειρίζεται εξ ολοκλήρου από το iOS.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Πολιτική Απορρήτου</a> | <a
-                        href="terms-of-service.html">Όροι χρήσης</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
-
-        <!-- Finnish -->
-        <div id="content-fi" class="lang-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Ota yhteyttä tukeen</h2>
-                </div>
-                <p>Onko sinulla kysyttävää tai tarvitsetko apua? Olemme täällä sinua varten.</p><a
-                    href="mailto:privacyqr@proton.me" class="contact-btn">Lähetä sähköposti →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Usein kysytyt kysymykset</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Tallennetaanko tietoni pilveen?</p>
-                    <p class="faq-a">Ei. PrivacyQR toimii 100% offline-tilassa. Kaikki QR-koodisi ja asetuksesi
-                        tallennetaan paikallisesti.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Mitä "Burn After Read" tarkoittaa?</p>
-                    <p class="faq-a">Kun se on käytössä, QR-koodi poistetaan automaattisesti sen jälkeen, kun se on
-                        katsottu kerran.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Mikä on Kill Switch?</p>
-                    <p class="faq-a">Kill Switch mahdollistaa tallennetun QR-koodin välittömän deaktivoinnin.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Miten palautan Pro-ostokseni?</p>
-                    <p class="faq-a">Siirry kohtaan Asetukset → Palauta ostokset.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Tallentaako sovellus Face ID/Touch ID -tietoja?</p>
-                    <p class="faq-a">Ei. Biometrinen todennus hoidetaan kokonaan iOS:n toimesta.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Tietosuojakäytäntö</a> | <a
-                        href="terms-of-service.html">Käyttöehdot</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
-
-        <!-- Czech -->
-        <div id="content-cs" class="lang-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Kontaktujte podporu</h2>
-                </div>
-                <p>Máte otázku nebo potřebujete pomoc? Jsme tu pro vás.</p><a href="mailto:privacyqr@proton.me"
-                    class="contact-btn">Odeslat e-mail →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Často kladené otázky</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Jsou moje data uložena v cloudu?</p>
-                    <p class="faq-a">Ne. PrivacyQR funguje 100% offline. Všechny vaše QR kódy a nastavení jsou uloženy
-                        lokálně.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Co znamená "Burn After Read"?</p>
-                    <p class="faq-a">Když je aktivováno, QR kód bude automaticky smazán po jednom zobrazení.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Co je Kill Switch?</p>
-                    <p class="faq-a">Kill Switch vám umožňuje okamžitě deaktivovat uložený QR kód.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Jak obnovím svůj nákup Pro?</p>
-                    <p class="faq-a">Přejděte do Nastavení → Obnovit nákupy.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Ukládá aplikace data Face ID/Touch ID?</p>
-                    <p class="faq-a">Ne. Biometrické ověřování je zcela zpracováváno systémem iOS.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Zásady ochrany osobních údajů</a> | <a
-                        href="terms-of-service.html">Podmínky použití</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
-
-        <!-- Romanian -->
-        <div id="content-ro" class="lang-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Contactează suportul</h2>
-                </div>
-                <p>Ai o întrebare sau ai nevoie de ajutor? Suntem aici pentru tine.</p><a
-                    href="mailto:privacyqr@proton.me" class="contact-btn">Trimite email →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Întrebări frecvente</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Sunt datele mele stocate în cloud?</p>
-                    <p class="faq-a">Nu. PrivacyQR funcționează 100% offline. Toate codurile QR și setările sunt stocate
-                        local.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Ce înseamnă "Burn After Read"?</p>
-                    <p class="faq-a">Când este activat, un cod QR va fi șters automat după ce a fost vizualizat o dată.
-                    </p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Ce este Kill Switch?</p>
-                    <p class="faq-a">Kill Switch îți permite să dezactivezi instant un cod QR salvat.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Cum îmi restaurez achiziția Pro?</p>
-                    <p class="faq-a">Mergi la Setări → Restaurează achizițiile.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Stochează aplicația date Face ID/Touch ID?</p>
-                    <p class="faq-a">Nu. Autentificarea biometrică este gestionată în întregime de iOS.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Politica de confidențialitate</a> | <a
-                        href="terms-of-service.html">Termeni de utilizare</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
-
-        <!-- Hungarian -->
-        <div id="content-hu" class="lang-content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">✉️</div>
-                    <h2>Támogatás elérése</h2>
-                </div>
-                <p>Van kérdése vagy segítségre van szüksége? Itt vagyunk Önért.</p><a href="mailto:privacyqr@proton.me"
-                    class="contact-btn">E-mail küldése →</a>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">❓</div>
-                    <h2>Gyakran ismételt kérdések</h2>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Az adataim a felhőben tárolódnak?</p>
-                    <p class="faq-a">Nem. A PrivacyQR 100%-ban offline működik. Minden QR-kódja és beállítása helyben
-                        tárolódik.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Mit jelent a "Burn After Read"?</p>
-                    <p class="faq-a">Ha engedélyezve van, a QR-kód automatikusan törlődik az egyszeri megtekintés után.
-                    </p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Mi az a Kill Switch?</p>
-                    <p class="faq-a">A Kill Switch lehetővé teszi egy mentett QR-kód azonnali deaktiválását.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Hogyan állítom vissza a Pro vásárlásomat?</p>
-                    <p class="faq-a">Lépjen a Beállítások → Vásárlások visszaállítása menüpontra.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Tárolja az alkalmazás a Face ID/Touch ID adatokat?</p>
-                    <p class="faq-a">Nem. A biometrikus hitelesítést teljes egészében az iOS kezeli.</p>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer-links"><a href="privacy-policy.html">Adatvédelmi irányelvek</a> | <a
-                        href="terms-of-service.html">Felhasználási feltételek</a></div>
-                <p class="copyright">© 2025 PrivacyQR</p>
-            </div>
-        </div>
+        <!-- BEGIN GENERATED LEGAL -->
+<section id="content-sv" lang="sv" class="lang-content">
+<div class="card">
+<h1>Support</h1>
+<p class="subtitle">Senast uppdaterad: 2026-10-17</p>
+<h2>Kontakt</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Ange appversion, iOS-version, enhetsmodell, steg för att återskapa problemet och eventuellt felmeddelande. Dölj QR-innehåll, Wi-Fi-lösenord och andras uppgifter i skärmbilder. Skicka inte din databas eller inloggningsuppgifter.</p>
+<h2>Supportens integritet</h2>
+<p>Endast Proton Mail används. Supportmejl och bilagor raderas senast 90 dagar efter avslutat ärende, med undantag för uppgifter som måste sparas för rättsliga skyldigheter eller konkreta rättsliga anspråk. Se integritetspolicyn och GDPR-informationen för dina rättigheter.</p>
+<h2>Data och återställning</h2>
+<p>Vi har ingen kopia av ditt QR-bibliotek och kan inte återställa förlorade krypteringsnycklar. Rensa all data raderar sparade koder, inte inställningar, nyckelringsnycklar, mejl eller delade kopior. Säkerhetskopior styrs i iOS eller på datorn. Kill Switch och utgångsdatum återkallar inte exporterade bilder.</p>
+<h2>Rapportera säkerhetsproblem</h2>
+<p>Mejla en beskrivning, berörd version och steg för att återskapa felet med okänsliga exempeluppgifter. Skicka inte aktiva inloggningsuppgifter eller andras QR-innehåll. Du behöver inte lämna känsliga uppgifter för att kontakta oss.</p>
+<h2>Behöver appen internet?</h2>
+<p>QR-skanning, generering och lokal lagring fungerar offline. Delningsmål, webbplatser, supportmejl och enhetens säkerhetskopiering kan använda nätet. Appen har ingen molnsynk.</p>
+<h2>Krypteras alla sparade fält?</h2>
+<p>Extra AES-GCM-kryptering gäller nya låsta koders innehåll. Olåst innehåll, titlar, datum, design och logotypdata omfattas inte. En delad QR-bild är läsbar för alla som skannar den.</p>
+<h2>Kan jag återkalla en delad kod?</h2>
+<p>Nej. Kill Switch och utgångsdatum stoppar bara visning och delning inne i appen. Burn After Read försöker radera lokalt efter att en visad detaljvy stängts. Delade, utskrivna och fotograferade kopior fungerar fortfarande.</p>
+<h2>Vad raderar Rensa all data?</h2>
+<p>Det raderar sparade koder i det lokala biblioteket. Inställningar, nyckelringsnyckeln, supportmejl, säkerhetskopior och externa kopior behöver hanteras separat.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#sv" lang="sv">Integritetspolicy</a> | <a href="terms-of-service.html#sv" lang="sv">Användarvillkor</a>
+</footer></section>
+<section id="content-en" lang="en" class="lang-content active">
+<div class="card">
+<h1>Support</h1>
+<p class="subtitle">Last updated: 2026-10-17</p>
+<h2>Contact</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Include your app version, iOS version, device model, steps to reproduce and any error message. Redact QR content, Wi-Fi passwords and other people’s information from screenshots. Do not send your database or credentials.</p>
+<h2>Support privacy</h2>
+<p>Only Proton Mail is used. Support messages and attachments are deleted no later than 90 days after the case closes, apart from information necessarily retained for legal obligations or specific legal claims. See the Privacy Policy and GDPR information for your rights.</p>
+<h2>Data and recovery</h2>
+<p>We have no copy of your QR library and cannot recover lost encryption keys. Clear all data deletes saved codes, not preferences, Keychain keys, emails or shared copies. Backups are controlled in iOS or your computer. Kill Switch and expiry cannot recall exported images.</p>
+<h2>Report a security issue</h2>
+<p>Email a description, affected version and reproduction steps using non-sensitive example data. Do not include live credentials or other people’s QR contents. Contact does not require sending sensitive data.</p>
+<h2>Does the app need the internet?</h2>
+<p>QR scanning, generation and local storage work offline. Sharing destinations, websites, support email and device backups may use a network. The app does not implement cloud sync.</p>
+<h2>Is every stored field encrypted?</h2>
+<p>Additional AES-GCM encryption applies to newly saved locked payloads. Unlocked content, titles, dates, styling and logo data are not covered by it. A shared QR image is readable by anyone who scans it.</p>
+<h2>Can I revoke a shared code?</h2>
+<p>No. Kill Switch and expiry only block display and sharing inside this app. Burn After Read attempts local deletion after a viewed detail is closed. Shared, printed or photographed copies remain usable.</p>
+<h2>What does Clear all data delete?</h2>
+<p>It deletes saved codes from the local library. Preferences, the Keychain key, support emails, backups and external copies require separate handling.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#en" lang="en">Privacy Policy</a> | <a href="terms-of-service.html#en" lang="en">Terms of Use</a>
+</footer></section>
+<section id="content-de" lang="de" class="lang-content">
+<div class="card">
+<h1>Support</h1>
+<p class="subtitle">Zuletzt aktualisiert: 2026-10-17</p>
+<h2>Kontakt</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Geben Sie Ihre App-Version, iOS-Version, das Gerätemodell, Schritte zur Reproduktion und etwaige Fehlermeldungen an. Schwärzen Sie in Screenshots QR-Inhalte, WLAN-Passwörter und Informationen anderer Personen. Senden Sie weder Ihre Datenbank noch Zugangsdaten.</p>
+<h2>Datenschutz beim Support</h2>
+<p>Es wird ausschließlich Proton Mail verwendet. Support-Nachrichten und Anhänge werden spätestens 90 Tage nach Abschluss des Falls gelöscht, ausgenommen Informationen, die aufgrund gesetzlicher Verpflichtungen oder konkreter Rechtsansprüche zwingend aufbewahrt werden müssen. Ihre Rechte werden in der Datenschutzerklärung und den Informationen zur DSGVO erläutert.</p>
+<h2>Daten und Wiederherstellung</h2>
+<p>Wir haben keine Kopie Ihrer QR-Bibliothek und können verlorene Verschlüsselungsschlüssel nicht wiederherstellen. „Alle Daten löschen“ entfernt gespeicherte Codes, aber keine Einstellungen, Schlüsselbund-Schlüssel, E-Mails oder geteilten Kopien. Backups werden in iOS oder auf Ihrem Computer verwaltet. Kill Switch und Ablaufdatum können exportierte Bilder nicht zurückrufen.</p>
+<h2>Sicherheitsproblem melden</h2>
+<p>Senden Sie eine Beschreibung, die betroffene Version und Schritte zur Reproduktion mit nicht vertraulichen Beispieldaten per E-Mail. Geben Sie keine aktiven Zugangsdaten oder QR-Inhalte anderer Personen an. Für eine Kontaktaufnahme müssen keine vertraulichen Daten gesendet werden.</p>
+<h2>Benötigt die App eine Internetverbindung?</h2>
+<p>Das Scannen und Erstellen von QR-Codes sowie die lokale Speicherung funktionieren offline. Ziele beim Teilen, Websites, Support-E-Mails und Geräte-Backups können eine Netzwerkverbindung verwenden. Die App bietet keine Cloud-Synchronisierung.</p>
+<h2>Ist jedes gespeicherte Feld verschlüsselt?</h2>
+<p>Zusätzliche AES-GCM-Verschlüsselung gilt für neu gespeicherte Payloads gesperrter Codes. Entsperrte Inhalte, Titel, Daten, Gestaltung und Logodaten sind davon nicht erfasst. Ein geteiltes QR-Bild kann von jedem gelesen werden, der es scannt.</p>
+<h2>Kann ich einen geteilten Code widerrufen?</h2>
+<p>Nein. Kill Switch und Ablaufdatum blockieren die Anzeige und das Teilen nur innerhalb dieser App. Burn After Read versucht nach dem Schließen der angesehenen Detailansicht, den lokalen Eintrag zu löschen. Geteilte, gedruckte oder fotografierte Kopien bleiben verwendbar.</p>
+<h2>Was wird durch „Alle Daten löschen“ entfernt?</h2>
+<p>Die Funktion löscht gespeicherte Codes aus der lokalen Bibliothek. Einstellungen, der Schlüssel im Schlüsselbund, Support-E-Mails, Backups und externe Kopien müssen separat behandelt werden.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#de" lang="de">Datenschutzerklärung</a> | <a href="terms-of-service.html#de" lang="de">Nutzungsbedingungen</a>
+</footer></section>
+<section id="content-fr" lang="fr" class="lang-content">
+<div class="card">
+<h1>Assistance</h1>
+<p class="subtitle">Dernière mise à jour : 2026-10-17</p>
+<h2>Contact</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Indiquez la version de l’application et d’iOS, le modèle de l’appareil, les étapes permettant de reproduire le problème et tout message d’erreur. Masquez dans les captures d’écran le contenu QR, les mots de passe Wi-Fi et les informations concernant d’autres personnes. N’envoyez ni votre base de données ni vos identifiants.</p>
+<h2>Confidentialité de l’assistance</h2>
+<p>Seul Proton Mail est utilisé. Les messages et pièces jointes d’assistance sont supprimés au plus tard 90 jours après la clôture du dossier, à l’exception des informations devant être conservées pour respecter des obligations légales ou traiter des réclamations juridiques précises. Consultez la Politique de confidentialité et les informations relatives au RGPD pour connaître vos droits.</p>
+<h2>Données et récupération</h2>
+<p>Nous ne possédons aucune copie de votre bibliothèque QR et ne pouvons pas récupérer les clés de chiffrement perdues. Effacer toutes les données supprime les codes sauvegardés, mais pas les préférences, les clés du trousseau, les e-mails ni les copies partagées. Les sauvegardes se gèrent dans iOS ou sur votre ordinateur. Kill Switch et l’expiration ne peuvent pas rappeler les images exportées.</p>
+<h2>Signaler un problème de sécurité</h2>
+<p>Envoyez par e-mail une description, la version concernée et les étapes de reproduction, en utilisant des données d’exemple non sensibles. N’incluez ni identifiants actifs ni contenu QR appartenant à d’autres personnes. Il n’est pas nécessaire de transmettre des données sensibles pour nous contacter.</p>
+<h2>L’application a-t-elle besoin d’Internet ?</h2>
+<p>La lecture, la création et le stockage local des codes QR fonctionnent hors ligne. Les destinations de partage, les sites Web, les e-mails d’assistance et les sauvegardes de l’appareil peuvent utiliser le réseau. L’application ne met pas en œuvre de synchronisation dans le cloud.</p>
+<h2>Tous les champs stockés sont-ils chiffrés ?</h2>
+<p>Le chiffrement AES-GCM supplémentaire s’applique aux charges utiles nouvellement sauvegardées pour les codes verrouillés. Il ne couvre ni le contenu déverrouillé, ni les titres, ni les dates, ni la mise en forme, ni les données du logo. Toute personne qui scanne une image QR partagée peut la lire.</p>
+<h2>Puis-je révoquer un code partagé ?</h2>
+<p>Non. Kill Switch et l’expiration bloquent uniquement l’affichage et le partage dans cette application. Burn After Read tente une suppression locale lorsque vous fermez la vue détaillée consultée. Les copies partagées, imprimées ou photographiées restent utilisables.</p>
+<h2>Que supprime l’option « Effacer toutes les données » ?</h2>
+<p>Elle supprime les codes sauvegardés de la bibliothèque locale. Les préférences, la clé du trousseau, les e-mails d’assistance, les sauvegardes et les copies externes doivent être gérés séparément.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#fr" lang="fr">Politique de confidentialité</a> | <a href="terms-of-service.html#fr" lang="fr">Conditions d’utilisation</a>
+</footer></section>
+<section id="content-da" lang="da" class="lang-content">
+<div class="card">
+<h1>Support</h1>
+<p class="subtitle">Senest opdateret: 2026-10-17</p>
+<h2>Kontakt</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Oplys din appversion, iOS-version, enhedsmodel, trin til at genskabe problemet og eventuelle fejlmeddelelser. Slør QR-indhold, Wi-Fi-adgangskoder og andre personers oplysninger i skærmbilleder. Send ikke din database eller dine adgangsoplysninger.</p>
+<h2>Support og privatliv</h2>
+<p>Kun Proton Mail bruges. Supportbeskeder og vedhæftninger slettes senest 90 dage efter sagens afslutning, bortset fra oplysninger, der nødvendigvis opbevares på grund af retlige forpligtelser eller konkrete retskrav. Se privatlivspolitikken og GDPR-oplysningerne om dine rettigheder.</p>
+<h2>Data og gendannelse</h2>
+<p>Vi har ingen kopi af dit QR-bibliotek og kan ikke gendanne mistede krypteringsnøgler. Ryd alle data sletter gemte koder, men ikke indstillinger, nøgleringsnøgler, e-mails eller delte kopier. Sikkerhedskopier styres i iOS eller på din computer. Kill Switch og udløb kan ikke tilbagekalde eksporterede billeder.</p>
+<h2>Rapportér et sikkerhedsproblem</h2>
+<p>Send en beskrivelse, den berørte version og trin til at genskabe problemet via e-mail med ufølsomme eksempeldata. Medtag ikke aktive adgangsoplysninger eller andre personers QR-indhold. Det kræver ikke, at du sender følsomme data, at du kontakter os.</p>
+<h2>Kræver appen internet?</h2>
+<p>Scanning og oprettelse af QR-koder samt lokal lagring fungerer offline. Delingsdestinationer, websteder, support-e-mail og sikkerhedskopier af enheden kan bruge et netværk. Appen har ikke cloud-synkronisering.</p>
+<h2>Er alle gemte felter krypteret?</h2>
+<p>Ekstra AES-GCM-kryptering gælder for nyligt gemte payloads for låste koder. Oplåst indhold, titler, datoer, udseende og logodata er ikke omfattet. Et delt QR-billede kan læses af alle, der scanner det.</p>
+<h2>Kan jeg tilbagekalde en delt kode?</h2>
+<p>Nej. Kill Switch og udløb blokerer kun visning og deling i denne app. Burn After Read forsøger lokal sletning, når en vist detalje lukkes. Delte, udskrevne eller fotograferede kopier kan fortsat bruges.</p>
+<h2>Hvad sletter Ryd alle data?</h2>
+<p>Funktionen sletter gemte koder fra det lokale bibliotek. Indstillinger, nøglen i nøgleringen, support-e-mails, sikkerhedskopier og eksterne kopier skal håndteres separat.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#da" lang="da">Privatlivspolitik</a> | <a href="terms-of-service.html#da" lang="da">Brugsvilkår</a>
+</footer></section>
+<section id="content-nb" lang="nb" class="lang-content">
+<div class="card">
+<h1>Support</h1>
+<p class="subtitle">Sist oppdatert: 2026-10-17</p>
+<h2>Kontakt</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Oppgi appversjon, iOS-versjon, enhetsmodell, trinn for å gjenskape problemet og eventuelle feilmeldinger. Sladd QR-innhold, Wi-Fi-passord og andres opplysninger i skjermbilder. Ikke send databasen eller påloggingsopplysninger.</p>
+<h2>Personvern for support</h2>
+<p>Bare Proton Mail brukes. Supportmeldinger og vedlegg slettes senest 90 dager etter at saken er avsluttet, med unntak av opplysninger som må oppbevares på grunn av rettslige forpliktelser eller konkrete rettskrav. Se personvernerklæringen og GDPR-informasjonen for rettighetene dine.</p>
+<h2>Data og gjenoppretting</h2>
+<p>Vi har ingen kopi av QR-biblioteket ditt og kan ikke gjenopprette tapte krypteringsnøkler. Slett alle data sletter lagrede koder, men ikke innstillinger, nøkler i nøkkelringen, e-poster eller delte kopier. Sikkerhetskopier styres i iOS eller på datamaskinen din. Kill Switch og utløp kan ikke hente tilbake eksporterte bilder.</p>
+<h2>Rapporter et sikkerhetsproblem</h2>
+<p>Send en beskrivelse, berørt versjon og trinn for å gjenskape problemet via e-post, med ikke-sensitive eksempeldata. Ikke ta med aktive påloggingsopplysninger eller andres QR-innhold. Det er ikke nødvendig å sende sensitive data for å ta kontakt.</p>
+<h2>Trenger appen internett?</h2>
+<p>Skanning og oppretting av QR-koder og lokal lagring fungerer uten nett. Delingsmål, nettsteder, support-e-post og sikkerhetskopier av enheten kan bruke nettverk. Appen har ikke nettskysynkronisering.</p>
+<h2>Er alle lagrede felt kryptert?</h2>
+<p>Ekstra AES-GCM-kryptering gjelder for nylig lagrede payloads for låste koder. Opplåst innhold, titler, datoer, utforming og logodata omfattes ikke. Et delt QR-bilde kan leses av alle som skanner det.</p>
+<h2>Kan jeg tilbakekalle en delt kode?</h2>
+<p>Nei. Kill Switch og utløp blokkerer bare visning og deling i denne appen. Burn After Read forsøker lokal sletting når en vist detalj lukkes. Delte, utskrevne eller fotograferte kopier kan fortsatt brukes.</p>
+<h2>Hva sletter Slett alle data?</h2>
+<p>Funksjonen sletter lagrede koder fra det lokale biblioteket. Innstillinger, nøkkelen i nøkkelringen, support-e-poster, sikkerhetskopier og eksterne kopier må håndteres separat.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#nb" lang="nb">Personvernerklæring</a> | <a href="terms-of-service.html#nb" lang="nb">Bruksvilkår</a>
+</footer></section>
+<section id="content-es" lang="es" class="lang-content">
+<div class="card">
+<h1>Asistencia</h1>
+<p class="subtitle">Última actualización: 2026-10-17</p>
+<h2>Contacto</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Incluya la versión de la app, la versión de iOS, el modelo del dispositivo, los pasos para reproducir el problema y cualquier mensaje de error. Oculte el contenido QR, las contraseñas Wi-Fi y la información de otras personas en las capturas de pantalla. No envíe su base de datos ni credenciales.</p>
+<h2>Privacidad de la asistencia</h2>
+<p>Solo se utiliza Proton Mail. Los mensajes de asistencia y sus archivos adjuntos se eliminan como máximo 90 días después del cierre del caso, excepto la información que sea necesario conservar para cumplir obligaciones legales o atender reclamaciones jurídicas concretas. Consulte la Política de privacidad y la información sobre el RGPD para conocer sus derechos.</p>
+<h2>Datos y recuperación</h2>
+<p>No tenemos una copia de su biblioteca de códigos QR y no podemos recuperar claves de cifrado perdidas. Borrar todos los datos elimina los códigos guardados, pero no las preferencias, las claves del Llavero, los correos ni las copias compartidas. Las copias de seguridad se gestionan en iOS o en su ordenador. Kill Switch y la caducidad no pueden retirar imágenes exportadas.</p>
+<h2>Notificar un problema de seguridad</h2>
+<p>Envíe por correo una descripción, la versión afectada y los pasos para reproducir el problema usando datos de ejemplo no sensibles. No incluya credenciales activas ni contenido QR de otras personas. No es necesario enviar datos sensibles para ponerse en contacto.</p>
+<h2>¿La app necesita Internet?</h2>
+<p>El escaneo, la generación y el almacenamiento local de códigos QR funcionan sin conexión. Los destinos compartidos, los sitios web, el correo de asistencia y las copias de seguridad del dispositivo pueden utilizar la red. La app no implementa sincronización en la nube.</p>
+<h2>¿Se cifra cada campo almacenado?</h2>
+<p>El cifrado AES-GCM adicional se aplica a las cargas útiles bloqueadas que se guarden a partir de ahora. No cubre el contenido desbloqueado, los títulos, las fechas, el estilo ni los datos del logotipo. Cualquiera que escanee una imagen QR compartida puede leerla.</p>
+<h2>¿Puedo revocar un código compartido?</h2>
+<p>No. Kill Switch y la caducidad solo bloquean la visualización y el uso compartido dentro de esta app. Burn After Read intenta eliminar el registro local cuando se cierra el detalle que se ha visto. Las copias compartidas, impresas o fotografiadas siguen siendo utilizables.</p>
+<h2>¿Qué elimina Borrar todos los datos?</h2>
+<p>Elimina los códigos guardados de la biblioteca local. Las preferencias, la clave del Llavero, los correos de asistencia, las copias de seguridad y las copias externas deben gestionarse por separado.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#es" lang="es">Política de privacidad</a> | <a href="terms-of-service.html#es" lang="es">Condiciones de uso</a>
+</footer></section>
+<section id="content-it" lang="it" class="lang-content">
+<div class="card">
+<h1>Assistenza</h1>
+<p class="subtitle">Ultimo aggiornamento: 2026-10-17</p>
+<h2>Contatti</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Indica la versione dell&#x27;app, la versione di iOS, il modello del dispositivo, i passaggi per riprodurre il problema e gli eventuali messaggi di errore. Oscura dagli screenshot i contenuti QR, le password Wi-Fi e le informazioni di altre persone. Non inviare il database né credenziali.</p>
+<h2>Privacy dell&#x27;assistenza</h2>
+<p>Viene usato solo Proton Mail. I messaggi e gli allegati di assistenza vengono eliminati entro e non oltre 90 giorni dalla chiusura del caso, salvo le informazioni da conservare necessariamente per obblighi legali o specifiche pretese giuridiche. Per i tuoi diritti, consulta l&#x27;Informativa sulla privacy e le informazioni sul GDPR.</p>
+<h2>Dati e recupero</h2>
+<p>Non abbiamo una copia della tua libreria QR e non possiamo recuperare le chiavi di cifratura perse. Cancella tutti i dati elimina i codici salvati, ma non le preferenze, le chiavi del Portachiavi, le email o le copie condivise. I backup sono gestiti in iOS o sul tuo computer. Kill Switch e scadenza non possono richiamare le immagini esportate.</p>
+<h2>Segnalare un problema di sicurezza</h2>
+<p>Invia via email una descrizione, la versione interessata e i passaggi per riprodurre il problema, usando dati di esempio non sensibili. Non includere credenziali attive o contenuti QR di altre persone. Per contattarci non è necessario inviare dati sensibili.</p>
+<h2>L&#x27;app ha bisogno di internet?</h2>
+<p>La scansione, la generazione e la memorizzazione locale dei codici QR funzionano offline. Le destinazioni di condivisione, i siti web, l&#x27;email di assistenza e i backup del dispositivo possono usare la rete. L&#x27;app non implementa la sincronizzazione cloud.</p>
+<h2>Ogni campo salvato è cifrato?</h2>
+<p>La cifratura AES-GCM aggiuntiva si applica ai nuovi payload salvati con blocco. Contenuti senza blocco, titoli, date, stile e dati del logo non sono coperti. Un&#x27;immagine QR condivisa è leggibile da chiunque la scansioni.</p>
+<h2>Posso revocare un codice condiviso?</h2>
+<p>No. Kill Switch e scadenza impediscono la visualizzazione e la condivisione solo all&#x27;interno di questa app. Burn After Read tenta l&#x27;eliminazione locale dopo aver chiuso i dettagli visualizzati. Le copie condivise, stampate o fotografate restano utilizzabili.</p>
+<h2>Che cosa elimina Cancella tutti i dati?</h2>
+<p>Elimina i codici salvati dalla libreria locale. Le preferenze, la chiave del Portachiavi, le email di assistenza, i backup e le copie esterne devono essere gestiti separatamente.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#it" lang="it">Informativa sulla privacy</a> | <a href="terms-of-service.html#it" lang="it">Termini di utilizzo</a>
+</footer></section>
+<section id="content-nl" lang="nl" class="lang-content">
+<div class="card">
+<h1>Ondersteuning</h1>
+<p class="subtitle">Laatst bijgewerkt: 2026-10-17</p>
+<h2>Contact</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Vermeld uw appversie, iOS-versie, apparaatmodel, stappen om het probleem te reproduceren en eventuele foutmelding. Maak QR-inhoud, wifiwachtwoorden en gegevens van anderen onleesbaar op schermafbeeldingen. Stuur uw database of inloggegevens niet mee.</p>
+<h2>Privacy bij ondersteuning</h2>
+<p>Er wordt uitsluitend Proton Mail gebruikt. Berichten aan de ondersteuning en bijlagen worden uiterlijk 90 dagen nadat de zaak is gesloten verwijderd, behalve informatie die noodzakelijk moet worden bewaard vanwege wettelijke verplichtingen of specifieke rechtsvorderingen. Raadpleeg het Privacybeleid en de AVG-informatie voor uw rechten.</p>
+<h2>Gegevens en herstel</h2>
+<p>We hebben geen kopie van uw QR-bibliotheek en kunnen verloren versleutelingssleutels niet herstellen. Wis alle gegevens verwijdert opgeslagen codes, maar niet voorkeuren, Keychain-sleutels, e-mails of gedeelde kopieën. Back-ups beheert u in iOS of op uw computer. Kill Switch en de vervaldatum kunnen geëxporteerde afbeeldingen niet terughalen.</p>
+<h2>Een beveiligingsprobleem melden</h2>
+<p>Stuur per e-mail een beschrijving, de getroffen versie en stappen om het probleem te reproduceren, met niet-gevoelige voorbeeldgegevens. Vermeld geen actieve inloggegevens of QR-inhoud van anderen. Voor contact hoeft u geen gevoelige gegevens te versturen.</p>
+<h2>Heeft de app internet nodig?</h2>
+<p>QR-codes scannen, maken en lokaal opslaan werkt offline. Bestemmingen voor delen, websites, ondersteuningsmail en apparaatback-ups kunnen een netwerk gebruiken. De app implementeert geen cloudsynchronisatie.</p>
+<h2>Wordt elk opgeslagen veld versleuteld?</h2>
+<p>Aanvullende AES-GCM-versleuteling geldt voor payloads van nieuw opgeslagen vergrendelde codes. Ontgrendelde inhoud, titels, datums, vormgeving en logogegevens vallen hier niet onder. Een gedeelde QR-afbeelding is leesbaar voor iedereen die deze scant.</p>
+<h2>Kan ik een gedeelde code intrekken?</h2>
+<p>Nee. Kill Switch en de vervaldatum blokkeren weergave en delen alleen binnen deze app. Burn After Read probeert de lokale gegevens te verwijderen nadat de bekeken detailweergave is gesloten. Gedeelde, afgedrukte of gefotografeerde kopieën blijven bruikbaar.</p>
+<h2>Wat verwijdert Wis alle gegevens?</h2>
+<p>Hiermee worden opgeslagen codes uit de lokale bibliotheek verwijderd. Voorkeuren, de Keychain-sleutel, ondersteuningsmails, back-ups en externe kopieën moeten afzonderlijk worden beheerd.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#nl" lang="nl">Privacybeleid</a> | <a href="terms-of-service.html#nl" lang="nl">Gebruiksvoorwaarden</a>
+</footer></section>
+<section id="content-pl" lang="pl" class="lang-content">
+<div class="card">
+<h1>Pomoc techniczna</h1>
+<p class="subtitle">Ostatnia aktualizacja: 2026-10-17</p>
+<h2>Kontakt</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Podaj wersję aplikacji iOS, model urządzenia, kroki pozwalające odtworzyć problem oraz ewentualny komunikat o błędzie. Usuń ze zrzutów ekranu treści kodów QR, hasła do Wi-Fi i informacje o innych osobach. Nie wysyłaj bazy danych ani danych logowania.</p>
+<h2>Prywatność w ramach pomocy technicznej</h2>
+<p>Używany jest wyłącznie Proton Mail. Wiadomości do pomocy technicznej i załączniki są usuwane najpóźniej w ciągu 90 dni od zamknięcia sprawy, z wyjątkiem informacji, które trzeba zachować ze względu na obowiązki prawne lub konkretne roszczenia prawne. Informacje o Twoich prawach znajdują się w Polityce prywatności i sekcji o RODO.</p>
+<h2>Dane i odzyskiwanie</h2>
+<p>Nie posiadamy kopii Twojej biblioteki kodów QR i nie możemy odzyskać utraconych kluczy szyfrujących. Wyczyść wszystkie dane usuwa zapisane kody, ale nie preferencje, klucze Keychain, wiadomości e-mail ani udostępnione kopie. Kopiami zapasowymi zarządza się w iOS lub na komputerze. Kill Switch i termin wygaśnięcia nie mogą unieważnić wyeksportowanych obrazów.</p>
+<h2>Zgłoś problem z bezpieczeństwem</h2>
+<p>Wyślij opis, numer wersji, której dotyczy problem, oraz kroki jego odtworzenia, używając przykładowych danych, które nie są poufne. Nie dołączaj aktualnych danych logowania ani treści kodów QR innych osób. Zgłoszenie nie wymaga wysyłania danych poufnych.</p>
+<h2>Czy aplikacja potrzebuje internetu?</h2>
+<p>Skanowanie, tworzenie i lokalne przechowywanie kodów QR działają offline. Udostępnianie do wybranych miejsc docelowych, witryny internetowe, poczta pomocy technicznej i kopie zapasowe urządzenia mogą wymagać sieci. Aplikacja nie obsługuje synchronizacji z chmurą.</p>
+<h2>Czy każde zapisane pole jest szyfrowane?</h2>
+<p>Dodatkowe szyfrowanie AES-GCM obejmuje ładunki nowo zapisanych zablokowanych kodów. Nie obejmuje treści odblokowanych kodów, tytułów, dat, stylu ani danych logo. Każdy, kto zeskanuje udostępniony obraz QR, może go odczytać.</p>
+<h2>Czy mogę unieważnić udostępniony kod?</h2>
+<p>Nie. Kill Switch i termin wygaśnięcia blokują wyświetlanie i udostępnianie wyłącznie w tej aplikacji. Burn After Read próbuje usunąć lokalny rekord po zamknięciu wyświetlonych szczegółów. Udostępnione, wydrukowane lub sfotografowane kopie nadal działają.</p>
+<h2>Co usuwa opcja Wyczyść wszystkie dane?</h2>
+<p>Usuwa zapisane kody z lokalnej biblioteki. Preferencjami, kluczem Keychain, wiadomościami e-mail do pomocy technicznej, kopiami zapasowymi i kopiami zewnętrznymi należy zarządzać oddzielnie.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#pl" lang="pl">Polityka prywatności</a> | <a href="terms-of-service.html#pl" lang="pl">Warunki użytkowania</a>
+</footer></section>
+<section id="content-pt" lang="pt" class="lang-content">
+<div class="card">
+<h1>Apoio</h1>
+<p class="subtitle">Última atualização: 2026-10-17</p>
+<h2>Contacto</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Indique a versão da aplicação, a versão do iOS, o modelo do dispositivo, os passos para reproduzir o problema e qualquer mensagem de erro. Oculte conteúdo QR, palavras-passe de Wi-Fi e informações de outras pessoas nas capturas de ecrã. Não envie a sua base de dados nem credenciais.</p>
+<h2>Privacidade do apoio</h2>
+<p>Apenas o Proton Mail é utilizado. As mensagens de apoio e os anexos são eliminados o mais tardar 90 dias após o encerramento do caso, exceto informações cuja conservação seja necessária para obrigações legais ou ações judiciais específicas. Consulte a Política de Privacidade e as informações sobre o RGPD para conhecer os seus direitos.</p>
+<h2>Dados e recuperação</h2>
+<p>Não temos uma cópia da sua biblioteca de códigos QR e não podemos recuperar chaves de encriptação perdidas. Apagar todos os dados elimina os códigos guardados, mas não as preferências, as chaves do Keychain, os e-mails nem as cópias partilhadas. As cópias de segurança são geridas no iOS ou no computador. Kill Switch e a validade não podem recolher imagens exportadas.</p>
+<h2>Comunicar um problema de segurança</h2>
+<p>Envie por e-mail uma descrição, a versão afetada e os passos para reproduzir o problema, utilizando dados de exemplo não sensíveis. Não inclua credenciais ativas nem conteúdo QR de outras pessoas. Não é necessário enviar dados sensíveis para nos contactar.</p>
+<h2>A aplicação precisa de internet?</h2>
+<p>A leitura, criação e armazenamento local de códigos QR funcionam sem ligação à internet. Os destinos de partilha, websites, e-mail de apoio e cópias de segurança do dispositivo podem utilizar uma rede. A aplicação não implementa sincronização na nuvem.</p>
+<h2>Todos os campos armazenados são encriptados?</h2>
+<p>A encriptação adicional AES-GCM aplica-se aos novos conteúdos guardados com bloqueio. O conteúdo sem bloqueio, os títulos, as datas, o estilo e os dados do logótipo não estão abrangidos. Uma imagem QR partilhada pode ser lida por qualquer pessoa que a leia.</p>
+<h2>Posso revogar um código partilhado?</h2>
+<p>Não. Kill Switch e a validade apenas impedem a apresentação e a partilha dentro desta aplicação. Burn After Read tenta eliminar localmente o registo depois de fechar a vista de detalhe consultada. As cópias partilhadas, impressas ou fotografadas continuam utilizáveis.</p>
+<h2>O que elimina Apagar todos os dados?</h2>
+<p>Elimina os códigos guardados da biblioteca local. As preferências, a chave do Keychain, os e-mails de apoio, as cópias de segurança e as cópias externas exigem uma gestão separada.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#pt" lang="pt">Política de Privacidade</a> | <a href="terms-of-service.html#pt" lang="pt">Termos de Utilização</a>
+</footer></section>
+<section id="content-el" lang="el" class="lang-content">
+<div class="card">
+<h1>Υποστήριξη</h1>
+<p class="subtitle">Τελευταία ενημέρωση: 2026-10-17</p>
+<h2>Επικοινωνία</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Συμπεριλάβετε την έκδοση της εφαρμογής, την έκδοση iOS, το μοντέλο συσκευής, τα βήματα αναπαραγωγής και τυχόν μήνυμα σφάλματος. Αποκρύψτε από στιγμιότυπα οθόνης το περιεχόμενο QR, τους κωδικούς πρόσβασης Wi‑Fi και τα στοιχεία άλλων προσώπων. Μην στέλνετε τη βάση δεδομένων ή διαπιστευτήρια.</p>
+<h2>Απόρρητο υποστήριξης</h2>
+<p>Χρησιμοποιείται μόνο το Proton Mail. Τα μηνύματα υποστήριξης και τα συνημμένα διαγράφονται το αργότερο 90 ημέρες μετά το κλείσιμο της υπόθεσης, εκτός από πληροφορίες που πρέπει να διατηρηθούν για νομικές υποχρεώσεις ή συγκεκριμένες νομικές αξιώσεις. Δείτε την Πολιτική απορρήτου και τις πληροφορίες GDPR για τα δικαιώματά σας.</p>
+<h2>Δεδομένα και ανάκτηση</h2>
+<p>Δεν διαθέτουμε αντίγραφο της βιβλιοθήκης QR σας και δεν μπορούμε να ανακτήσουμε χαμένα κλειδιά κρυπτογράφησης. Η Εκκαθάριση όλων των δεδομένων διαγράφει τους αποθηκευμένους κωδικούς, όχι τις προτιμήσεις, τα κλειδιά Keychain, τα email ή τα κοινόχρηστα αντίγραφα. Η διαχείριση των αντιγράφων ασφαλείας γίνεται στο iOS ή στον υπολογιστή σας. Το Kill Switch και η λήξη δεν μπορούν να ανακαλέσουν εξαγόμενες εικόνες.</p>
+<h2>Αναφορά ζητήματος ασφαλείας</h2>
+<p>Στείλτε με email περιγραφή, την επηρεαζόμενη έκδοση και βήματα αναπαραγωγής, χρησιμοποιώντας μη ευαίσθητα ενδεικτικά δεδομένα. Μην συμπεριλάβετε ενεργά διαπιστευτήρια ή περιεχόμενο QR άλλων προσώπων. Για επικοινωνία δεν χρειάζεται να στείλετε ευαίσθητα δεδομένα.</p>
+<h2>Χρειάζεται η εφαρμογή διαδίκτυο;</h2>
+<p>Η σάρωση, η δημιουργία και η τοπική αποθήκευση QR λειτουργούν χωρίς σύνδεση. Οι προορισμοί κοινοποίησης, οι ιστότοποι, το email υποστήριξης και τα αντίγραφα ασφαλείας της συσκευής ενδέχεται να χρησιμοποιούν δίκτυο. Η εφαρμογή δεν υλοποιεί συγχρονισμό cloud.</p>
+<h2>Κρυπτογραφείται κάθε αποθηκευμένο πεδίο;</h2>
+<p>Η πρόσθετη κρυπτογράφηση AES-GCM εφαρμόζεται σε νέα αποθηκευμένα κλειδωμένα payload. Το ξεκλείδωτο περιεχόμενο, οι τίτλοι, οι ημερομηνίες, η μορφοποίηση και τα δεδομένα λογοτύπου δεν καλύπτονται από αυτήν. Μια κοινόχρηστη εικόνα QR είναι αναγνώσιμη από όποιον τη σαρώσει.</p>
+<h2>Μπορώ να ανακαλέσω έναν κοινόχρηστο κωδικό;</h2>
+<p>Όχι. Το Kill Switch και η λήξη εμποδίζουν την εμφάνιση και την κοινοποίηση μόνο μέσα σε αυτήν την εφαρμογή. Το Burn After Read επιχειρεί τοπική διαγραφή αφού κλείσει η προβολή λεπτομερειών που είδατε. Τα κοινόχρηστα, εκτυπωμένα ή φωτογραφημένα αντίγραφα παραμένουν χρησιμοποιήσιμα.</p>
+<h2>Τι διαγράφει η Εκκαθάριση όλων των δεδομένων;</h2>
+<p>Διαγράφει τους αποθηκευμένους κωδικούς από την τοπική βιβλιοθήκη. Οι προτιμήσεις, το κλειδί Keychain, τα email υποστήριξης, τα αντίγραφα ασφαλείας και τα εξωτερικά αντίγραφα χρειάζονται ξεχωριστή διαχείριση.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#el" lang="el">Πολιτική απορρήτου</a> | <a href="terms-of-service.html#el" lang="el">Όροι χρήσης</a>
+</footer></section>
+<section id="content-fi" lang="fi" class="lang-content">
+<div class="card">
+<h1>Tuki</h1>
+<p class="subtitle">Päivitetty viimeksi: 2026-10-17</p>
+<h2>Yhteystiedot</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Ilmoita sovelluksen versio, iOS-versio, laitteen malli, toistamiseen tarvittavat vaiheet ja mahdollinen virheilmoitus. Peitä kuvakaappauksista QR-sisältö, Wi-Fi-salasanat ja muiden henkilöiden tiedot. Älä lähetä tietokantaasi tai tunnistetietojasi.</p>
+<h2>Tuen tietosuoja</h2>
+<p>Käytössä on vain Proton Mail. Tukiviestit ja liitteet poistetaan viimeistään 90 päivän kuluessa asian päättymisestä, lukuun ottamatta tietoja, joita on välttämätöntä säilyttää lakisääteisten velvoitteiden tai yksilöityjen oikeudellisten vaateiden vuoksi. Katso oikeutesi tietosuojakäytännöstä ja GDPR-tiedoista.</p>
+<h2>Tiedot ja palautus</h2>
+<p>Meillä ei ole kopiota QR-kirjastostasi, emmekä voi palauttaa kadonneita salausavaimia. Kaikkien tietojen tyhjentäminen poistaa tallennetut koodit, ei asetuksia, Keychain-avaimia, sähköposteja tai jaettuja kopioita. iOS tai tietokoneesi hallitsee varmuuskopioita. Kill Switch ja vanheneminen eivät peru vietyjä kuvia.</p>
+<h2>Ilmoita tietoturvaongelmasta</h2>
+<p>Lähetä kuvaus, versio johon ongelma vaikuttaa, ja toistamisohjeet käyttäen esimerkkitietoja, jotka eivät ole arkaluonteisia. Älä sisällytä voimassa olevia tunnistetietoja tai muiden henkilöiden QR-sisältöä. Yhteydenotto ei edellytä arkaluonteisten tietojen lähettämistä.</p>
+<h2>Tarvitseeko sovellus internetyhteyttä?</h2>
+<p>QR-koodien skannaus, luominen ja paikallinen tallennus toimivat offline-tilassa. Jakamiskohteet, verkkosivustot, tukisähköposti ja laitteen varmuuskopiot voivat käyttää verkkoa. Sovellus ei toteuta pilvisynkronointia.</p>
+<h2>Salataanko kaikki tallennetut kentät?</h2>
+<p>AES-GCM-lisäsalausta käytetään uusiin tallennettuihin lukittuihin payloadeihin. Lukitsematon sisältö, otsikot, päivämäärät, ulkoasu ja logotiedot eivät kuulu sen piiriin. Jaettu QR-kuva on luettavissa kaikille, jotka skannaavat sen.</p>
+<h2>Voinko perua jaetun koodin?</h2>
+<p>Et. Kill Switch ja vanheneminen estävät näyttämisen ja jakamisen vain tässä sovelluksessa. Burn After Read yrittää poistaa paikallisesti tietueen, kun katseltu tietonäkymä suljetaan. Jaetut, tulostetut tai valokuvatut kopiot pysyvät käytettävissä.</p>
+<h2>Mitä Tyhjennä kaikki tiedot poistaa?</h2>
+<p>Se poistaa tallennetut koodit paikallisesta kirjastosta. Asetukset, Keychain-avain, tukisähköpostit, varmuuskopiot ja ulkoiset kopiot on käsiteltävä erikseen.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#fi" lang="fi">Tietosuojakäytäntö</a> | <a href="terms-of-service.html#fi" lang="fi">Käyttöehdot</a>
+</footer></section>
+<section id="content-cs" lang="cs" class="lang-content">
+<div class="card">
+<h1>Podpora</h1>
+<p class="subtitle">Poslední aktualizace: 2026-10-17</p>
+<h2>Kontakt</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Uveďte verzi aplikace, verzi iOS, model zařízení, kroky k reprodukci a případnou chybovou zprávu. Ze snímků obrazovky odstraňte obsah QR kódů, hesla k Wi-Fi a údaje jiných osob. Neposílejte databázi ani přihlašovací údaje.</p>
+<h2>Soukromí při podpoře</h2>
+<p>Používá se pouze Proton Mail. Zprávy a přílohy podpory se smažou nejpozději do 90 dnů od uzavření případu, kromě informací, které je nutné uchovávat kvůli zákonným povinnostem nebo konkrétním právním nárokům. Informace o právech najdete v Zásadách ochrany osobních údajů a v části o GDPR.</p>
+<h2>Data a obnovení</h2>
+<p>Nemáme kopii vaší knihovny QR kódů a nemůžeme obnovit ztracené šifrovací klíče. Vymazat všechna data odstraní uložené kódy, nikoli předvolby, klíče Keychain, e-maily ani sdílené kopie. Zálohy se spravují v iOS nebo v počítači. Kill Switch a vypršení platnosti nemohou odvolat exportované obrázky.</p>
+<h2>Nahlásit bezpečnostní problém</h2>
+<p>Pošlete popis, dotčenou verzi a kroky k reprodukci s použitím necitlivých příkladových údajů. Neuvádějte platné přihlašovací údaje ani obsah QR kódů jiných osob. Pro kontakt není nutné zasílat citlivé údaje.</p>
+<h2>Potřebuje aplikace internet?</h2>
+<p>Skenování, vytváření a místní ukládání QR kódů funguje offline. Cíle sdílení, webové stránky, e-mail podpory a zálohy zařízení mohou využívat síť. Aplikace neimplementuje synchronizaci s cloudem.</p>
+<h2>Je každé uložené pole šifrované?</h2>
+<p>Dodatečné šifrování AES-GCM se vztahuje na nově uložený obsah zamčených kódů. Nevztahuje se na odemčený obsah, názvy, data, vzhled ani data loga. Sdílený obrázek QR může přečíst každý, kdo jej naskenuje.</p>
+<h2>Mohu zneplatnit sdílený kód?</h2>
+<p>Ne. Kill Switch a vypršení platnosti blokují zobrazení a sdílení pouze v této aplikaci. Burn After Read se po zavření zobrazených podrobností pokusí o místní smazání. Sdílené, vytištěné nebo vyfotografované kopie zůstávají použitelné.</p>
+<h2>Co smaže volba Vymazat všechna data?</h2>
+<p>Smaže uložené kódy z místní knihovny. Předvolby, klíč Keychain, e-maily podpory, zálohy a externí kopie je nutné spravovat samostatně.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#cs" lang="cs">Zásady ochrany osobních údajů</a> | <a href="terms-of-service.html#cs" lang="cs">Podmínky použití</a>
+</footer></section>
+<section id="content-ro" lang="ro" class="lang-content">
+<div class="card">
+<h1>Asistență</h1>
+<p class="subtitle">Ultima actualizare: 2026-10-17</p>
+<h2>Contact</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Includeți versiunea aplicației, versiunea iOS, modelul dispozitivului, pașii de reproducere și orice mesaj de eroare. Eliminați din capturi de ecran conținutul codurilor QR, parolele Wi-Fi și informațiile altor persoane. Nu trimiteți baza de date sau datele de autentificare.</p>
+<h2>Confidențialitatea serviciului de asistență</h2>
+<p>Se folosește numai Proton Mail. Mesajele și atașamentele trimise serviciului de asistență sunt șterse în cel mult 90 de zile de la închiderea cazului, cu excepția informațiilor care trebuie păstrate pentru obligații legale sau pretenții juridice specifice. Consultați Politica de confidențialitate și informațiile GDPR pentru drepturile dvs.</p>
+<h2>Date și recuperare</h2>
+<p>Nu avem o copie a bibliotecii dvs. de coduri QR și nu putem recupera cheile de criptare pierdute. Șterge toate datele elimină codurile salvate, nu și preferințele, cheile Keychain, e-mailurile sau copiile partajate. Copiile de siguranță sunt gestionate în iOS sau pe computer. Kill Switch și expirarea nu pot retrage imaginile exportate.</p>
+<h2>Raportați o problemă de securitate</h2>
+<p>Trimiteți prin e-mail o descriere, versiunea afectată și pașii de reproducere, folosind date demonstrative care nu sunt sensibile. Nu includeți date de autentificare active sau conținut QR al altor persoane. Contactarea nu necesită trimiterea de date sensibile.</p>
+<h2>Aplicația are nevoie de internet?</h2>
+<p>Scanarea, generarea și stocarea locală a codurilor QR funcționează offline. Destinațiile de partajare, site-urile web, e-mailul de asistență și copiile de siguranță ale dispozitivului pot folosi o rețea. Aplicația nu implementează sincronizarea în cloud.</p>
+<h2>Este criptat fiecare câmp stocat?</h2>
+<p>Criptarea suplimentară AES-GCM se aplică încărcăturilor codurilor blocate salvate recent. Conținutul deblocat, titlurile, datele, stilizarea și datele logo-ului nu sunt incluse. Oricine scanează o imagine QR partajată o poate citi.</p>
+<h2>Pot revoca un cod partajat?</h2>
+<p>Nu. Kill Switch și expirarea blochează afișarea și partajarea numai în această aplicație. Burn After Read încearcă ștergerea locală după închiderea detaliilor vizualizate. Copiile partajate, tipărite sau fotografiate rămân utilizabile.</p>
+<h2>Ce șterge opțiunea Șterge toate datele?</h2>
+<p>Șterge codurile salvate din biblioteca locală. Preferințele, cheia Keychain, e-mailurile de asistență, copiile de siguranță și copiile externe trebuie gestionate separat.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#ro" lang="ro">Politica de confidențialitate</a> | <a href="terms-of-service.html#ro" lang="ro">Termeni de utilizare</a>
+</footer></section>
+<section id="content-hu" lang="hu" class="lang-content">
+<div class="card">
+<h1>Támogatás</h1>
+<p class="subtitle">Utolsó frissítés: 2026-10-17</p>
+<h2>Kapcsolat</h2>
+<p>Mattias Isberg — privacyqr@proton.me. Adja meg az alkalmazás és az iOS verzióját, a készülék modelljét, a hiba reprodukálásának lépéseit és az esetleges hibaüzenetet. A képernyőképeken takarja ki a QR-tartalmat, a Wi-Fi-jelszavakat és mások adatait. Ne küldje el az adatbázisát vagy a hitelesítő adatait.</p>
+<h2>A támogatás adatvédelme</h2>
+<p>Kizárólag Proton Mail szolgáltatást használunk. A támogatási üzeneteket és mellékleteket az ügy lezárását követő legfeljebb 90 napon belül töröljük, kivéve azokat az adatokat, amelyeket jogi kötelezettség vagy konkrét jogi igény miatt szükséges megőrizni. Jogairól az Adatvédelmi szabályzatban és a GDPR-ról szóló tájékoztatóban olvashat.</p>
+<h2>Adatok és helyreállítás</h2>
+<p>Nincs másolatunk az Ön QR-könyvtáráról, és az elveszett titkosítási kulcsokat sem tudjuk helyreállítani. A Clear all data törli a mentett kódokat, de a beállításokat, a Kulcskarikában tárolt kulcsokat, az e-maileket vagy a megosztott példányokat nem. A biztonsági mentéseket az iOS-ben vagy a számítógépén kezelheti. A Kill Switch és a lejárat nem vonhatja vissza az exportált képeket.</p>
+<h2>Biztonsági probléma bejelentése</h2>
+<p>E-mailben küldje el a probléma leírását, az érintett verziót és a reprodukálás lépéseit, nem érzékeny példaadatokkal. Ne mellékeljen érvényes hitelesítő adatokat vagy mások QR-tartalmát. A kapcsolatfelvételhez nem szükséges érzékeny adatokat küldenie.</p>
+<h2>Szüksége van az alkalmazásnak internetkapcsolatra?</h2>
+<p>A QR-kódok beolvasása, létrehozása és helyi tárolása offline is működik. A megosztás célhelyei, a webhelyek, a támogatási e-mail és az eszköz biztonsági mentései hálózati kapcsolatot használhatnak. Az alkalmazás nem valósít meg felhőszinkronizálást.</p>
+<h2>Minden tárolt mező titkosított?</h2>
+<p>A további AES-GCM-titkosítás az újonnan mentett, zárolt kódok hasznos adattartalmára vonatkozik. A feloldott tartalomra, címekre, dátumokra, megjelenésre és logóadatokra nem terjed ki. A megosztott QR-képet bárki elolvashatja, aki beolvassa.</p>
+<h2>Visszavonhatok egy megosztott kódot?</h2>
+<p>Nem. A Kill Switch és a lejárat csak ezen az alkalmazáson belül tiltja le a megjelenítést és a megosztást. A Burn After Read megkísérli a helyi törlést a megtekintett részletes nézet bezárásakor. A megosztott, kinyomtatott vagy lefényképezett példányok továbbra is használhatók.</p>
+<h2>Mit töröl a Clear all data?</h2>
+<p>Törli a mentett kódokat a helyi könyvtárból. A beállításokat, a Kulcskarikában tárolt kulcsot, a támogatási e-maileket, a biztonsági mentéseket és a külső példányokat külön kell kezelni.</p>
+</div>
+<footer class="footer-links">
+<a href="privacy-policy.html#hu" lang="hu">Adatvédelmi szabályzat</a> | <a href="terms-of-service.html#hu" lang="hu">Felhasználási feltételek</a>
+</footer></section>
+<!-- END GENERATED LEGAL -->
     </div>
 
     <script>
@@ -1276,6 +928,7 @@
         }
 
         function setLanguage(lang) {
+            document.documentElement.lang = lang;
             // Update content visibility
             document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
             const content = document.getElementById('content-' + lang);
@@ -1293,7 +946,6 @@
 
             // Update tagline and logic
             document.getElementById('tagline').textContent = taglines[lang];
-            document.documentElement.lang = lang;
 
             // Close menu
             document.getElementById('langDropdown').classList.remove('active');
@@ -1308,10 +960,11 @@
         });
 
         document.addEventListener('DOMContentLoaded', function () {
+            const supported = ['sv', 'en', 'de', 'fr', 'da', 'nb', 'es', 'it', 'nl', 'pl', 'pt', 'el', 'fi', 'cs', 'ro', 'hu'];
+            const requested = location.hash.slice(1);
             const browserLang = navigator.language.substring(0, 2);
-            const langMap = { sv: 'sv', en: 'en', de: 'de', fr: 'fr', da: 'da', no: 'nb', nb: 'nb', es: 'es', it: 'it', nl: 'nl', pl: 'pl', pt: 'pt', el: 'el', fi: 'fi', cs: 'cs', ro: 'ro', hu: 'hu' };
-            const initialLang = langMap[browserLang] || 'en';
-            setLanguage(initialLang);
+            const candidate = browserLang === 'no' ? 'nb' : browserLang;
+            setLanguage(supported.includes(requested) ? requested : (supported.includes(candidate) ? candidate : 'en'));
         });
     </script>
 </body>
