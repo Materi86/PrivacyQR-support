@@ -8,9 +8,9 @@ Public support and legal information for PrivacyQR, provided by Mattias Isberg.
 
 ## Content and provenance
 
-The pages contain the reviewed information in all 16 supported languages: Swedish, English, German, French, Danish, Norwegian Bokmål, Spanish, Italian, Dutch, Polish, Portuguese, Greek, Finnish, Czech, Romanian and Hungarian. The policy text is dated **2026-10-17**; this repository was synchronised on **2026-10-18**.
+The pages contain the reviewed information in all 16 supported languages: Swedish, English, German, French, Danish, Norwegian Bokmål, Spanish, Italian, Dutch, Polish, Portuguese, Greek, Finnish, Czech, Romanian and Hungarian. The policy text is dated **2026-10-19**; this repository was synchronised on **2026-10-19**.
 
-The source review covered the `codex/free` app checkout at base commit `67fbb9c`, including its local documentation changes. It does not establish the contents of every App Store build or another source branch. Before changing releases or features, recheck the actual app's data flows and security behaviour.
+The text describes the Pro-capable **1.0.1** source on `main`, based on commit `24fd2ae81f494334667cc6b44472e86e73f23a2b` plus the coordinated legal-text update. It distinguishes older app versions that may have stored unlocked plaintext payloads, encrypts every new payload in 1.0.1, and treats StoreKit purchases separately from local QR processing. Updating this website does not replace the legal resources in an existing App Store or TestFlight build; the updated app resources require a new build.
 
 Mattias Isberg confirmed the contact address `privacyqr@proton.me`, Proton Mail as the only support service, and deletion of support correspondence and attachments no later than 90 days after a case closes, subject to necessary legal retention. Publishing this text does not configure or perform mailbox deletion.
 
