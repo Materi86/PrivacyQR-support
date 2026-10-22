@@ -467,7 +467,14 @@
                 font-size: 2rem;
             }
         }
+        .product-entry{padding:28px 0 36px;margin:0 0 36px;border-bottom:1px solid var(--border);text-align:center}
+        .product-entry p{color:var(--text-secondary);margin:10px auto 20px;max-width:54ch}
+        .product-entry nav{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center}
+        .product-entry a{color:var(--text-primary);text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center}
+        .product-entry a.product-download{padding:10px 20px;background:#34d399;color:#0f172a;border-radius:10px;font-weight:700;text-decoration:none}
+        .product-entry a:focus-visible{outline:3px solid #34d399;outline-offset:4px}
     </style>
+    <link rel="icon" href="logo.png">
 </head>
 
 <body>
@@ -509,6 +516,15 @@
         </header>
 
         <!-- Swedish -->
+        <section class="product-entry" aria-label="PrivacyQR Pro">
+            <h2>PrivacyQR Pro</h2>
+            <p><span lang="sv">Egna färger, logotyper och skanning. Ett engångsköp utan prenumeration.</span><br><span lang="en">Custom colours, logos and scanning. One-time purchase, no subscription.</span></p>
+            <nav aria-label="Download and product information">
+                <a class="product-download" href="https://apps.apple.com/app/id6757152699">App Store</a>
+                <a href="pro.html" lang="sv">Upptäck Pro</a>
+                <a href="pro-en.html" lang="en">Explore Pro</a>
+            </nav>
+        </section>
         <!-- BEGIN GENERATED LEGAL -->
 <section id="content-sv" lang="sv" class="lang-content">
 <div class="card">
